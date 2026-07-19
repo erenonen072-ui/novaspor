@@ -1,28 +1,70 @@
-export default async function handler(req, res) {
+async function loadStandings(){
 
-    try {
+    const box = document.getElementById("standings");
 
-        const response = await fetch(
-            "https://v3.football.api-sports.io/standings?league=203&season=2024",
-            {
-                headers:{
-                    "x-apisports-key": process.env.API_KEY
-                }
-            }
-        );
+    try{
 
-
+        const response = await fetch("/api/standings");
         const data = await response.json();
 
-        res.status(200).json(data);
+
+        const teams = data.response[0].league.standings[0];
 
 
-    } catch(error){
+        box.innerHTML = `
 
-        res.status(500).json({
-            error:"Hata oluştu"
+        <div class="table">
+
+        <div class="row header">
+        <span>Sıra</span>
+        <span>Takım</span>
+        <span>Puan</span>
+        </div>
+
+        </div>
+
+        `;
+
+
+        teams.forEach(team => {
+
+            box.innerHTML += `
+
+            <div class="row">
+
+                <span>${team.rank}</span>
+
+
+                <span class="team">
+
+                <img src="${team.team.logo}">
+                
+                ${team.team.name}
+
+                </span>
+
+
+                <strong>
+                ${team.points}
+                </strong>
+
+            </div>
+
+            `;
+
         });
+
+
+    }catch(error){
+
+        console.log(error);
+
+        box.innerHTML =
+        "Puan durumu yüklenemedi.";
 
     }
 
 }
+
+
+loadStandings();

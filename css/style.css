@@ -335,3 +335,20 @@ button{
     cursor:pointer;
 
 }
+body.dark{
+    background:#111;
+    color:white;
+}
+
+
+body.dark .live,
+body.dark .cards,
+body.dark .match{
+    background:#222;
+    color:white;
+}
+
+
+body.dark nav a{
+    color:white;
+}

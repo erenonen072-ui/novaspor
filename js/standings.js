@@ -1,56 +1,15 @@
-async function loadStandings(){
+export default async function handler(req, res) {
 
-    const box = document.getElementById("standings");
+    const response = await fetch(
+        "https://v3.football.api-sports.io/standings?league=203&season=2025",
+        {
+            headers: {
+                "x-apisports-key": process.env.API_KEY
+            }
+        }
+    );
 
-    if(!box) return;
+    const data = await response.json();
 
-    try{
-
-        const response = await fetch("/api/standings");
-
-        const data = await response.json();
-
-
-        const table = data.response[0].league.standings[0];
-
-
-        box.innerHTML = "";
-
-
-        table.forEach(team => {
-
-
-            box.innerHTML += `
-
-            <div class="standing">
-
-                <span>
-                ${team.rank}. ${team.team.name}
-                </span>
-
-                <strong>
-                ${team.points} P
-                </strong>
-
-            </div>
-
-            `;
-
-
-        });
-
-
-    }catch(error){
-
-        box.innerHTML =
-        "Puan durumu yüklenemedi.";
-
-        console.error(error);
-
-    }
-
+    res.status(200).json(data);
 }
-
-
-loadStandings();
- 

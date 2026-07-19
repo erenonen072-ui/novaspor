@@ -156,3 +156,18 @@ nav a{
 .table tr:hover{
     background:#f5f5f5;
 }
+.match-card{
+    background:white;
+    padding:20px;
+    margin:15px 0;
+    border-radius:15px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.match-card:hover{
+    transform:scale(1.02);
+    transition:.3s;
+}

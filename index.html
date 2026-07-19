@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaSpor</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        header{
+            background:#ffcc00;
+            color:#000;
+            padding:18px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+        }
+
+        .logo{
+            font-size:30px;
+            font-weight:bold;
+        }
+
+        nav a{
+            text-decoration:none;
+            color:#000;
+            margin-left:20px;
+            font-weight:bold;
+        }
+
+        .hero{
+            text-align:center;
+            padding:60px 20px;
+        }
+
+        .hero h1{
+            font-size:45px;
+            margin-bottom:15px;
+        }
+
+        .hero p{
+            font-size:20px;
+            color:#555;
+        }
+
+        .btn{
+            margin-top:30px;
+            display:inline-block;
+            background:#000;
+            color:#fff;
+            padding:15px 30px;
+            text-decoration:none;
+            border-radius:10px;
+            font-weight:bold;
+        }
+
+        @media(max-width:768px){
+
+            header{
+                flex-direction:column;
+            }
+
+            nav{
+                margin-top:15px;
+            }
+
+            nav a{
+                display:block;
+                margin:10px 0;
+            }
+
+            .hero h1{
+                font-size:32px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">⚽ NovaSpor</div>
+
+<nav>
+
+<a href="#">Ana Sayfa</a>
+
+<a href="#">Canlı Maçlar</a>
+
+<a href="#">Puan Durumu</a>
+
+<a href="#">Fikstür</a>
+
+<a href="#">Haberler</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Türkiye'nin Yeni Spor Platformu</h1>
+
+<p>Canlı skorlar, puan durumu, fikstür ve son spor haberleri tek yerde.</p>
+
+<a href="#" class="btn">Canlı Maçları Gör</a>
+
+</section>
+
+</body>
+</html>

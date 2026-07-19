@@ -2,9 +2,11 @@ export default async function handler(req, res) {
 
     try {
 
+        const today = new Date().toISOString().split("T")[0];
+
+
         const response = await fetch(
-            "https://api.sportmonks.com/v3/football/fixtures?api_token=" 
-            + process.env.SPORTMONKS_API_TOKEN
+            `https://www.thesportsdb.com/api/v1/json/123/eventsday.php?d=${today}&s=Soccer`
         );
 
 
@@ -14,7 +16,7 @@ export default async function handler(req, res) {
         res.status(200).json(data);
 
 
-    } catch(error) {
+    } catch(error){
 
         res.status(500).json({
             error:error.message

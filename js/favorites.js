@@ -33,3 +33,8 @@ function showFavorite(){
 
 
 showFavorite();
+<script src="js/favorites.js"></script>
+
+</body>
+
+</html>

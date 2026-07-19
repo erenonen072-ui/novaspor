@@ -1,115 +1,54 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NovaSpor ⚽</title>
+<title>NovaSpor</title>
 
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-
 <body>
 
+<header class="top">
 
-<header>
+    <div class="logo">
+        ⚽ NovaSpor
+    </div>
 
-<div class="logo">
-⚽ <span>Nova</span>Spor
-</div>
-
-<nav>
-
-<a href="index.html">🏠 Ana Sayfa</a>
-
-<a href="#matches">🔴 Canlı</a>
-
-<a href="#standings">🏆 Puan Durumu</a>
-
-<a href="#fixtures">📅 Fikstür</a>
-
-<a href="news.html">📰 Haberler</a>
-
-<a href="favorites.html">⭐ Favoriler</a>
-
-<a href="#" onclick="darkMode()">🌙</a>
-
-</nav>
+    <nav>
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="live.html">🔴 Canlı</a>
+        <a href="standings.html">🏆 Puan Durumu</a>
+        <a href="fixtures.html">📅 Fikstür</a>
+        <a href="news.html">📰 Haberler</a>
+        <a href="favorites.html">⭐ Favoriler</a>
+    </nav>
 
 </header>
-<div class="breaking-news">
 
-<span>🔥 SON DAKİKA</span>
 
-<marquee scrollamount="5">
-
-Galatasaray yeni transferini duyurdu •
-Fenerbahçe hazırlık maçını kazandı •
-Beşiktaş yeni sezon hazırlıklarını sürdürüyor •
-Trabzonspor kamp çalışmalarına devam ediyor
-
-</marquee>
-
+<div class="news-bar">
+🔥 SON DAKİKA • Canlı skorlar • Fikstür • Spor haberleri
 </div>
 
+
+<main>
 
 <section class="hero">
 
-    <div class="hero-left">
+<h1>Türkiye'nin Yeni Spor Platformu</h1>
 
-        <span class="badge">🔥 SON DAKİKA</span>
-
-        <h1>Türkiye'nin Yeni <span>Spor Platformu</span></h1>
-
-        <h2 id="welcome">👋 Hoş geldin!</h2>
-
-        <p>
-            Canlı skorlar, puan durumu, fikstür ve son dakika spor haberleri tek yerde.
-        </p>
-
-        <a href="#matches" class="hero-btn">
-            🔴 Canlı Maçları Gör
-        </a>
-
-    </div>
-
-    <div class="hero-right">
-
-        <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=900&q=80" alt="Futbol">
-
-    </div>
-
-</section>
-<section class="quick-stats">
-
-<div class="stat-box">
-<h3>🏆 Lig</h3>
-<p>Süper Lig</p>
-</div>
-
-<div class="stat-box">
-<h3>🔴 Canlı</h3>
-<p id="liveCount">Yükleniyor...</p>
-</div>
-
-<div class="stat-box">
-<h3>⭐ Favori</h3>
-<p id="favoriteTeam">Yok</p>
-</div>
-
-<div class="stat-box">
-<h3>📰 Haber</h3>
-<p id="newsCount">0</p>
-</div>
+<p>
+Canlı skor, puan durumu, fikstür ve spor haberleri tek yerde.
+</p>
 
 </section>
 
 
-<section class="live">
+<section>
 
 <h2>🔴 Canlı Maçlar</h2>
 
@@ -122,97 +61,43 @@ Trabzonspor kamp çalışmalarına devam ediyor
 </section>
 
 
+<section>
 
-
-
-<section class="live">
-
-<h2>🏆 Trendyol Süper Lig Puan Durumu</h2>
+<h2>🏆 Puan Durumu</h2>
 
 <div id="standings">
 
-Puan durumu yükleniyor...
+<p>Puan durumu yükleniyor...</p>
 
 </div>
 
 </section>
 
 
-
-
-
-<section class="live">
+<section>
 
 <h2>📅 Fikstür</h2>
 
 <div id="fixtures">
 
-Fikstür yükleniyor...
+<p>Fikstür yükleniyor...</p>
 
 </div>
 
 </section>
 
 
-
-
-
-<section class="cards">
-
-
-<div>
-
-<h3>🏆 Puan Durumu</h3>
-
-<p>Takımlar ve puanlar</p>
-
-</div>
-
-
-
-<div>
-
-<h3>📅 Fikstür</h3>
-
-<p>Yaklaşan maçlar</p>
-
-</div>
-
-
-
-<div>
-
-<h3>📰 Haberler</h3>
-
-<p>Son spor haberleri</p>
-
-</div>
-
-
-
-</section>
-
-
-
+</main>
 
 
 <footer>
 
-<p>© 2026 NovaSpor</p>
+© 2026 NovaSpor
 
 </footer>
 
 
-
-
-
-<script src="js/main.js"></script>
-<script src="js/standings.js"></script>
-<script src="js/fixtures.js"></script>
-<script src="js/darkmode.js"></script>
-<script src="js/user.js"></script>
-
+<script src="js/app.js"></script>
 
 </body>
-
 </html>

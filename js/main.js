@@ -110,3 +110,14 @@ loadMatches();
 
 // Her 60 saniyede yenile
 setInterval(loadMatches,60000);
+// Hızlı bilgi kutularını güncelle
+const favorite = localStorage.getItem("favoriteTeam");
+
+if (favorite) {
+    document.getElementById("favoriteTeam").textContent = favorite;
+} else {
+    document.getElementById("favoriteTeam").textContent = "Seçilmedi";
+}
+
+// Şimdilik örnek haber sayısı
+document.getElementById("newsCount").textContent = "5";

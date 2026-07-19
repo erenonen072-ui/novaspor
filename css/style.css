@@ -509,3 +509,82 @@ nav a:hover{
     transform:translateY(-5px);
 
 }
+/* ===== HERO YENİ TASARIM ===== */
+
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    padding:70px 40px;
+    background:linear-gradient(135deg,#111,#222);
+    color:white;
+}
+
+.hero-left{
+    flex:1;
+}
+
+.hero-right{
+    flex:1;
+    text-align:center;
+}
+
+.hero-right img{
+    width:100%;
+    max-width:550px;
+    border-radius:20px;
+}
+
+.badge{
+    background:#FFD700;
+    color:black;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:50px;
+    margin:20px 0;
+}
+
+.hero h1 span{
+    color:#FFD700;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 24px;
+    background:#FFD700;
+    color:black;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+@media (max-width:768px){
+
+.hero{
+
+flex-direction:column;
+
+padding:30px 20px;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.hero-right img{
+
+max-width:100%;
+
+}
+
+}

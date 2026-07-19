@@ -1,5 +1,3 @@
 export default function handler(req, res) {
-    res.status(200).json({
-        test: "Standings API çalışıyor"
-    });
+    res.status(200).send("Standings çalışıyor");
 }

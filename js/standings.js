@@ -53,3 +53,4 @@ async function loadStandings(){
 
 
 loadStandings();
+ 

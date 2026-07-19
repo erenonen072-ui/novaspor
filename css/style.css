@@ -389,3 +389,123 @@ body.dark .profile-card{
     color:white;
 
 }
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 35px;
+
+    background:#111;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.3);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:white;
+}
+
+.logo span{
+    color:#FFD700;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+
+    color:#FFD700;
+
+}
+
+/* ================= SON DAKİKA ================= */
+
+.breaking-news{
+
+    display:flex;
+    align-items:center;
+
+    background:#FFD700;
+    color:#111;
+
+    padding:10px;
+
+    font-weight:bold;
+
+}
+
+.breaking-news span{
+
+    margin-right:15px;
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+    background:linear-gradient(135deg,#181818,#333);
+
+    color:white;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+.hero h1{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+.hero p{
+
+    font-size:22px;
+
+    opacity:.9;
+
+}
+
+/* ================= KARTLAR ================= */
+
+.live,
+.cards div,
+.profile-card{
+
+    border-radius:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.live:hover,
+.cards div:hover,
+.profile-card:hover{
+
+    transform:translateY(-5px);
+
+}

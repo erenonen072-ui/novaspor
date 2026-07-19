@@ -588,3 +588,72 @@ max-width:100%;
 }
 
 }
+/* ===== HIZLI BİLGİ KUTULARI ===== */
+
+.quick-stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+padding:30px;
+
+}
+
+.stat-box{
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+transition:.3s;
+
+}
+
+.stat-box:hover{
+
+transform:translateY(-8px);
+
+}
+
+.stat-box h3{
+
+margin-bottom:10px;
+
+color:#ffb300;
+
+}
+
+.stat-box p{
+
+font-size:20px;
+
+font-weight:bold;
+
+}
+
+body.dark .stat-box{
+
+background:#222;
+
+color:white;
+
+}
+
+@media(max-width:768px){
+
+.quick-stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}

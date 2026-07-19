@@ -1,12 +1,7 @@
 export default async function handler(req, res) {
   try {
     const response = await fetch(
-      "https://v3.football.api-sports.io/fixtures?live=all",
-      {
-        headers: {
-          "x-apisports-key": process.env.API_KEY,
-        },
-      }
+      `https://api.sportmonks.com/v3/football/livescores/inplay?api_token=${process.env.SPORTMONKS_API_TOKEN}&include=participants;scores`
     );
 
     const data = await response.json();
@@ -14,8 +9,7 @@ export default async function handler(req, res) {
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({
-      error: "API alınamadı",
-      details: error.message,
+      error: error.message
     });
   }
 }

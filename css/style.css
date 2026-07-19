@@ -318,3 +318,20 @@ nav{
 
 
 }
+select,
+button{
+
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    margin:10px;
+
+}
+
+
+button{
+
+    background:#ffcc00;
+    cursor:pointer;
+
+}

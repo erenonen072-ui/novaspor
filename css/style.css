@@ -171,3 +171,21 @@ nav a{
     transform:scale(1.02);
     transition:.3s;
 }
+.live-card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    margin:20px 0;
+}
+
+.live{
+    display:inline-block;
+    background:red;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+}

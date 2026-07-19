@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaSpor Favoriler</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+⚽ NovaSpor
+</div>
+
+</header>
+
+
+<section class="live">
+
+<h2>⭐ Favori Takımım</h2>
+
+
+<select id="teamSelect">
+
+<option value="">Takım seç</option>
+
+<option>Galatasaray</option>
+<option>Fenerbahçe</option>
+<option>Beşiktaş</option>
+<option>Trabzonspor</option>
+<option>Samsunspor</option>
+
+</select>
+
+
+<button onclick="saveFavorite()">
+Kaydet ⭐
+</button>
+
+
+<h3 id="favoriteText"></h3>
+
+
+</section>
+
+
+<script src="js/favorites.js"></script>
+
+</body>
+
+</html>

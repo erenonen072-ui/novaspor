@@ -352,3 +352,40 @@ body.dark .match{
 body.dark nav a{
     color:white;
 }
+.profile-card{
+
+    max-width:700px;
+    margin:25px auto;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.profile-card h2{
+
+    color:#ffb300;
+
+}
+
+.profile-card button{
+
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#ffb300;
+    color:black;
+    font-weight:bold;
+
+}
+
+body.dark .profile-card{
+
+    background:#222;
+    color:white;
+
+}

@@ -1,29 +1,55 @@
-export default async function handler(req, res) {
+function loadFixtures(){
 
-    try {
+    const box = document.getElementById("fixtures");
 
-        const response = await fetch(
-            "https://v3.football.api-sports.io/fixtures?league=203&season=2024",
-            {
-                headers:{
-                    "x-apisports-key": process.env.API_KEY
-                }
-            }
-        );
+    if(!box) return;
 
 
-        const data = await response.json();
+    const matches = [
+        {
+            home:"Galatasaray",
+            away:"Fenerbahçe",
+            date:"20 Temmuz 2026 20:00"
+        },
+        {
+            home:"Beşiktaş",
+            away:"Trabzonspor",
+            date:"21 Temmuz 2026 19:00"
+        },
+        {
+            home:"Samsunspor",
+            away:"Başakşehir",
+            date:"22 Temmuz 2026 18:30"
+        }
+    ];
 
 
-        res.status(200).json(data);
+    box.innerHTML="";
 
 
-    } catch(error){
+    matches.forEach(match=>{
 
-        res.status(500).json({
-            error:error.message
-        });
+        box.innerHTML += `
 
-    }
+        <div class="match">
+
+            <h3>
+            ${match.home}
+            ⚽
+            ${match.away}
+            </h3>
+
+            <p>
+            📅 ${match.date}
+            </p>
+
+        </div>
+
+        `;
+
+    });
 
 }
+
+
+loadFixtures();

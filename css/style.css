@@ -6,114 +6,203 @@
 }
 
 body{
-    background:#f4f4f4;
+    background:#f5f5f5;
+    color:#111;
 }
+
 
 header{
     background:#ffcc00;
-    color:#000;
-    padding:18px;
+    padding:20px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    position:sticky;
-    top:0;
+    flex-wrap:wrap;
 }
+
 
 .logo{
     font-size:30px;
     font-weight:bold;
 }
 
+
 nav a{
-    text-decoration:none;
     color:#000;
-    margin-left:20px;
+    text-decoration:none;
+    margin:8px;
     font-weight:bold;
 }
+
+
+nav a:hover{
+    color:white;
+}
+
 
 .hero{
     text-align:center;
     padding:60px 20px;
+    background:#111;
+    color:white;
 }
 
+
 .hero h1{
-    font-size:45px;
+    font-size:50px;
     margin-bottom:15px;
 }
 
+
 .hero p{
     font-size:20px;
-    color:#555;
 }
 
-.btn{
-    margin-top:30px;
-    display:inline-block;
-    background:#000;
-    color:#fff;
-    padding:15px 30px;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
-}
 
-@media(max-width:768px){
 
-    header{
-        flex-direction:column;
-    }
+.live{
 
-    nav{
-        margin-top:15px;
-    }
-
-    nav a{
-        display:block;
-        margin:10px 0;
-    }
-
-    .hero h1{
-        font-size:32px;
-    }
-}
-.live-matches{
-    max-width:900px;
+    max-width:1000px;
     margin:40px auto;
     padding:20px;
+
 }
 
-.live-matches h2{
+
+.live h2{
+
     margin-bottom:20px;
+
 }
 
-.match-card{
+
+#matches{
+
+    display:grid;
+    gap:20px;
+
+}
+
+
+
+.match{
+
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+
+
+.match img{
+
+    width:45px;
+    height:45px;
+
+}
+
+
+
+.teams{
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    font-size:18px;
+
+}
+
+
+.score{
+
+    font-size:30px;
+    font-weight:bold;
+
+}
+
+
+
+.minute{
+
+    color:red;
+    font-weight:bold;
+
+}
+
+
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    max-width:1000px;
+    margin:40px auto;
+    padding:20px;
+
+}
+
+
+
+.cards div{
+
     background:white;
     padding:25px;
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-align:center;
+
 }
 
-.league{
-    font-weight:bold;
-    color:#666;
+
+
+footer{
+
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+
 }
 
-.minute{
-    color:red;
-    font-size:24px;
-    font-weight:bold;
-    margin:15px 0;
+
+
+@media(max-width:768px){
+
+header{
+
+    flex-direction:column;
+
 }
 
-.score{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:22px;
-    margin:20px 0;
+
+nav{
+
+    margin-top:15px;
+
 }
 
-.score strong{
-    font-size:30px;
+
+.hero h1{
+
+    font-size:35px;
+
+}
+
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.teams{
+
+    flex-direction:column;
+    gap:10px;
+
+}
+
 }

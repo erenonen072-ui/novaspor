@@ -201,3 +201,11 @@ nav a{
     font-size:40px;
     font-weight:bold;
 }
+.footer{
+    margin-top:40px;
+    background:#f5c400;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:18px;
+}

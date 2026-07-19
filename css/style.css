@@ -77,3 +77,43 @@ nav a{
         font-size:32px;
     }
 }
+.live-matches{
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.live-matches h2{
+    margin-bottom:20px;
+}
+
+.match-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.league{
+    font-weight:bold;
+    color:#666;
+}
+
+.minute{
+    color:red;
+    font-size:24px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.score{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:22px;
+    margin:20px 0;
+}
+
+.score strong{
+    font-size:30px;
+}

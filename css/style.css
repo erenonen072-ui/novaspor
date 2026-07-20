@@ -906,3 +906,45 @@ margin-top:20px;
 color:#f5b400;
 
 }
+/* ⭐ ANA SAYFA FAVORİ KUTUSU */
+
+
+.favorite-box{
+
+background:white;
+margin:20px;
+padding:25px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+}
+
+
+.favorite-box h2{
+
+color:#f5b400;
+
+}
+
+
+.favorite-box a{
+
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+background:#f5b400;
+color:white;
+border-radius:20px;
+text-decoration:none;
+
+}
+
+
+/* Karanlık mod */
+
+.dark .favorite-box{
+
+background:#222;
+
+}

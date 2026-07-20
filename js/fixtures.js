@@ -1,54 +1,52 @@
-async function loadFixtures(){
+async function loadFixtures() {
 
     const box = document.getElementById("fixtures");
 
-    if(!box) return;
+    if (!box) return;
 
+    box.innerHTML = "📅 Fikstür yükleniyor...";
 
-    try{
+    try {
 
         const response = await fetch("/api/fixtures");
-
         const data = await response.json();
 
+        if (!data.response || data.response.length === 0) {
+            box.innerHTML = "⚽ Fikstür bulunamadı.";
+            return;
+        }
 
-        box.innerHTML="";
+        box.innerHTML = "";
 
-
-        data.response.forEach(match=>{
-
+        data.response.forEach(match => {
 
             box.innerHTML += `
+                <div class="match-card">
 
-            <div class="match">
+                    <div class="teams">
+                        <strong>${match.teams.home.name}</strong>
+                        <span class="vs">🆚</span>
+                        <strong>${match.teams.away.name}</strong>
+                    </div>
 
-            <h3>
-            ${match.teams.home.name}
-            -
-            ${match.teams.away.name}
-            </h3>
+                    <div class="match-info">
+                        📅 ${new Date(match.fixture.date).toLocaleString("tr-TR")}<br>
+                        🏟️ ${match.fixture.venue?.name || "Stadyum açıklanmadı"}<br>
+                        📍 ${match.fixture.venue?.city || ""}
+                    </div>
 
-            <p>
-            📅 ${new Date(match.fixture.date).toLocaleString("tr-TR")}
-            </p>
-
-            </div>
-
+                </div>
             `;
-
 
         });
 
+    } catch (error) {
 
-    }catch(error){
-
-        box.innerHTML="Fikstür yüklenemedi.";
-
-        console.log(error);
+        console.error(error);
+        box.innerHTML = "❌ Fikstür yüklenemedi.";
 
     }
 
 }
-
 
 loadFixtures();

@@ -44,7 +44,9 @@ async function loadFixtures() {
 
 
 
-        data.response.slice(0,30).forEach(match => {
+        data.response
+.filter(match => new Date(match.fixture.date) >= new Date())
+.forEach(match => {
 
 
             const home = match.teams.home;

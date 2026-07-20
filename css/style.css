@@ -586,3 +586,145 @@ table{
     }
 
 }
+/* =========================
+   NOVASPOR PUAN DURUMU
+========================= */
+
+#standings {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    overflow-x: auto;
+}
+
+
+.standing-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f5b400;
+}
+
+
+
+.standings-table {
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+
+.standings-table th {
+
+    background:#f5b400;
+    color:white;
+    padding:12px;
+    text-align:center;
+
+}
+
+
+
+.standings-table td {
+
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+    font-weight:500;
+
+}
+
+
+
+.standings-table tr:hover {
+
+    background:#fff8dc;
+
+}
+
+
+
+.team-cell {
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-align:left;
+
+}
+
+
+
+.team-cell img {
+
+    width:35px;
+    height:35px;
+    object-fit:contain;
+
+}
+
+
+
+.position {
+
+    font-weight:bold;
+
+}
+
+
+
+.points {
+
+    font-size:18px;
+    font-weight:bold;
+    color:#111;
+
+}
+
+
+
+/* Şampiyonlar ligi bölgesi */
+
+.champions {
+
+    border-left:5px solid #2ecc71;
+
+}
+
+
+
+/* Düşme hattı */
+
+.relegation {
+
+    border-left:5px solid #e74c3c;
+
+}
+
+
+
+/* Mobil */
+
+@media(max-width:600px){
+
+    .standings-table th,
+    .standings-table td {
+
+        padding:8px;
+        font-size:14px;
+
+    }
+
+
+    .team-cell img {
+
+        width:28px;
+        height:28px;
+
+    }
+
+}

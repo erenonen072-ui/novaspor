@@ -2,56 +2,137 @@
 <html lang="tr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NovaSpor Favoriler</title>
+<title>NovaSpor - Favoriler</title>
 
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
+
 <body>
+
 
 <header>
 
-<div class="logo">
-⚽ NovaSpor
-</div>
+<h1>⚽ NovaSpor</h1>
+
+
+<nav>
+
+<a href="index.html">🏠 Ana Sayfa</a>
+
+<a href="live.html">🔴 Canlı</a>
+
+<a href="standings.html">🏆 Puan Durumu</a>
+
+<a href="fixtures.html">📅 Fikstür</a>
+
+<a href="news.html">📰 Haberler</a>
+
+<a href="favorites.html" class="active">⭐ Favoriler</a>
+
+<a href="about.html">ℹ️ Hakkımızda</a>
+
+<a href="contact.html">📞 İletişim</a>
+
+<a href="privacy.html">🔒 Gizlilik</a>
+
+</nav>
+
+
+<button id="darkBtn">
+🌙
+</button>
+
 
 </header>
 
 
-<section class="live">
 
-<h2>⭐ Favori Takımım</h2>
+
+<main>
+
+
+<section class="welcome">
+
+
+<h2>⭐ Favori Takımını Seç</h2>
+
+
+<p>
+Takımını seç, hızlıca takip et.
+</p>
 
 
 <select id="teamSelect">
 
-<option value="">Takım seç</option>
 
-<option>Galatasaray</option>
-<option>Fenerbahçe</option>
-<option>Beşiktaş</option>
-<option>Trabzonspor</option>
-<option>Samsunspor</option>
+<option value="Galatasaray">
+Galatasaray
+</option>
+
+
+<option value="Fenerbahçe">
+Fenerbahçe
+</option>
+
+
+<option value="Beşiktaş">
+Beşiktaş
+</option>
+
+
+<option value="Trabzonspor">
+Trabzonspor
+</option>
+
+
+<option value="Başakşehir">
+Başakşehir
+</option>
+
 
 </select>
 
 
+<br><br>
+
+
 <button onclick="saveFavorite()">
-Kaydet ⭐
+⭐ Kaydet
 </button>
 
 
-<h3 id="favoriteText"></h3>
+<h3 id="favoriteTeam"></h3>
 
 
 </section>
 
 
+</main>
+
+
+
+
+<footer>
+
+<p>
+© 2026 NovaSpor
+</p>
+
+</footer>
+
+
+
+
 <script src="js/favorites.js"></script>
+
+<script src="js/darkmode.js"></script>
+
 
 </body>
 

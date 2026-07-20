@@ -13,15 +13,29 @@ async function loadFixtures() {
 
         const response = await fetch("/api/fixtures");
 
-
         const data = await response.json();
 
 
 
         if (!data.response || data.response.length === 0) {
 
-
             box.innerHTML = "⚽ Fikstür bulunamadı.";
+
+            return;
+
+        }
+
+
+
+        const upcomingMatches = data.response
+            .filter(match => new Date(match.fixture.date) >= new Date())
+            .slice(0,30);
+
+
+
+        if (upcomingMatches.length === 0) {
+
+            box.innerHTML = "⚽ Yaklaşan maç bulunamadı.";
 
             return;
 
@@ -33,13 +47,13 @@ async function loadFixtures() {
 
 
 
-        data.response.slice(0,30).forEach(match => {
+        upcomingMatches.forEach(match => {
+
 
 
             const home = match.teams.home;
 
             const away = match.teams.away;
-
 
 
             const date = new Date(match.fixture.date);
@@ -129,15 +143,7 @@ async function loadFixtures() {
 
                 <div class="score">
 
-
-                    ${
-                    match.goals.home !== null
-                    ?
-                    match.goals.home + " - " + match.goals.away
-                    :
-                    "Yakında"
-                    }
-
+                    Yaklaşan Maç
 
                 </div>
 

@@ -766,3 +766,112 @@ color:#888;
 font-size:14px;
 
 }
+/* =========================
+   🌙 NOVASPOR KARANLIK MOD
+========================= */
+
+
+body.dark {
+
+    background:#121212;
+    color:white;
+
+}
+
+
+
+/* Header */
+
+body.dark header {
+
+    background:#1e1e1e;
+
+}
+
+
+
+/* Menü */
+
+body.dark nav a {
+
+    color:white;
+
+}
+
+
+
+/* Kartlar */
+
+body.dark .home-card,
+body.dark .news-card,
+body.dark .fixture-card,
+body.dark #standings,
+body.dark .welcome {
+
+    background:#222;
+    color:white;
+
+}
+
+
+
+/* Başlıklar */
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p {
+
+    color:white;
+
+}
+
+
+
+/* Tablo */
+
+body.dark .standings-table td {
+
+    color:white;
+    border-color:#444;
+
+}
+
+
+body.dark .standings-table th {
+
+    background:#333;
+
+}
+
+
+
+/* 🌙 Buton */
+
+#darkBtn {
+
+    position:fixed;
+
+    right:20px;
+
+    top:20px;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f5b400;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:999;
+
+}

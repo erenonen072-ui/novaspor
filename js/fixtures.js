@@ -1,145 +1,56 @@
-async function loadFixtures() {
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    const box = document.getElementById("fixtures");
+    <title>NovaSpor - Fikstür</title>
 
-    if (!box) return;
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    box.innerHTML = "📅 Fikstür yükleniyor...";
+<body>
 
+<header>
 
-    try {
+    <h1>⚽ NovaSpor</h1>
 
-        const response = await fetch("/api/fixtures");
+    <nav>
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="live.html">🔴 Canlı</a>
+        <a href="standings.html">🏆 Puan Durumu</a>
+        <a href="fixtures.html" class="active">📅 Fikstür</a>
+        <a href="news.html">📰 Haberler</a>
+    </nav>
 
-        const data = await response.json();
+</header>
 
 
-        if (!data.response || data.response.length === 0) {
+<main>
 
-            box.innerHTML = "⚽ Fikstür bulunamadı.";
+    <section>
 
-            return;
+        <h2>📅 Süper Lig Fikstürü</h2>
 
-        }
+        <div id="fixtures">
 
+            📅 Fikstür yükleniyor...
 
-        box.innerHTML = "";
+        </div>
 
+    </section>
 
-        data.response.forEach(match => {
+</main>
 
 
-            const home = match.teams.home;
-            const away = match.teams.away;
+<footer>
 
+    <p>© 2026 NovaSpor | Tüm hakları saklıdır.</p>
 
-            const date = new Date(match.fixture.date);
+</footer>
 
 
+<script src="js/fixtures.js"></script>
 
-            box.innerHTML += `
-
-            <div class="fixture-card">
-
-
-                <div class="league">
-
-                    ${match.league.name}
-
-                </div>
-
-
-
-                <div class="fixture-header">
-
-                    📅 ${date.toLocaleDateString("tr-TR")}
-
-                    -
-
-                    ${date.toLocaleTimeString("tr-TR", {
-                        hour:"2-digit",
-                        minute:"2-digit"
-                    })}
-
-                </div>
-
-
-
-                <div class="teams">
-
-
-                    <div class="team">
-
-                        <img src="${home.logo}">
-
-                        <div class="team-name">
-
-                            ${home.name}
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="vs">
-
-                        VS
-
-                    </div>
-
-
-
-                    <div class="team">
-
-                        <img src="${away.logo}">
-
-                        <div class="team-name">
-
-                            ${away.name}
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="score">
-
-                    ${
-                    match.goals.home !== null
-                    ?
-                    match.goals.home + " - " + match.goals.away
-                    :
-                    ""
-                    }
-
-                </div>
-
-
-
-            </div>
-
-            `;
-
-
-        });
-
-
-    } catch(error) {
-
-
-        console.error(error);
-
-        box.innerHTML = "❌ Fikstür yüklenemedi.";
-
-
-    }
-
-}
-
-
-loadFixtures();
+</body>
+</html>

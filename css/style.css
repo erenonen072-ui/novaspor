@@ -1084,3 +1084,173 @@ background:#222;
     font-size:14px;
 
 }
+/* =====================
+   NOVASPOR UYGULAMA ANA SAYFA
+===================== */
+
+
+.hero-mini {
+
+text-align:center;
+padding:25px;
+margin:15px;
+background:#f5b400;
+color:white;
+border-radius:20px;
+
+}
+
+
+.hero-mini h2 {
+
+font-size:30px;
+margin:0;
+
+}
+
+
+
+.hero-mini p {
+
+margin-top:8px;
+
+}
+
+
+
+
+.favorite-mini {
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin:15px;
+padding:15px 20px;
+
+background:white;
+
+border-radius:18px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+}
+
+
+
+.favorite-mini h3 {
+
+margin:0;
+color:#f5b400;
+
+}
+
+
+
+.favorite-mini a {
+
+background:#f5b400;
+color:white;
+
+padding:8px 15px;
+
+border-radius:20px;
+
+text-decoration:none;
+
+}
+
+
+
+
+.quick-menu {
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:12px;
+
+padding:15px;
+
+}
+
+
+
+
+.quick-menu a {
+
+background:white;
+
+padding:18px 10px;
+
+border-radius:18px;
+
+text-align:center;
+
+text-decoration:none;
+
+color:#222;
+
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+font-weight:bold;
+
+}
+
+
+
+.quick-menu span {
+
+display:block;
+
+font-size:28px;
+
+margin-bottom:8px;
+
+}
+
+
+
+
+
+.latest-box {
+
+margin:15px;
+
+padding:20px;
+
+background:white;
+
+border-radius:18px;
+
+text-align:center;
+
+}
+
+
+
+
+.dark .favorite-mini,
+.dark .quick-menu a,
+.dark .latest-box {
+
+background:#222;
+color:white;
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+.quick-menu {
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}

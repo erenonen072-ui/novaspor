@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
     try {
         const response = await fetch(
-            https://v3.football.api-sports.io/fixtures?league=203&season=2024
+            "https://v3.football.api-sports.io/fixtures?league=203&season=2024",
             {
                 headers: {
                     "x-apisports-key": process.env.API_KEY
@@ -14,10 +14,8 @@ export default async function handler(req, res) {
         res.status(200).json(data);
 
     } catch (error) {
-
         res.status(500).json({
             error: error.message
         });
-
     }
 }

@@ -1254,3 +1254,73 @@ grid-template-columns:repeat(2,1fr);
 
 
 }
+/* ANA SAYFA SON DOKUNUŞ */
+
+.hero-mini {
+
+    padding:18px;
+    margin:15px auto;
+    max-width:900px;
+
+}
+
+
+.hero-mini h2 {
+
+    font-size:24px;
+
+}
+
+
+
+.favorite-mini {
+
+    max-width:900px;
+    margin:15px auto;
+    padding:12px 18px;
+
+}
+
+
+
+.quick-menu {
+
+    max-width:900px;
+    margin:auto;
+
+}
+
+
+
+.latest-box {
+
+    max-width:900px;
+    margin:20px auto;
+    padding:15px;
+
+}
+
+
+.latest-box h2 {
+
+    font-size:22px;
+
+}
+
+
+
+/* Menü düzeltme */
+
+header {
+
+    padding-right:80px;
+
+}
+
+
+#darkBtn {
+
+    top:25px;
+    right:25px;
+
+}

@@ -42,3 +42,30 @@ box.innerHTML =
 
 
 showFavorite();
+function showHomeFavorite(){
+
+let team = localStorage.getItem("favoriteTeam");
+
+let box = document.getElementById("homeFavorite");
+
+
+if(box){
+
+    if(team){
+
+        box.innerHTML =
+        "⭐ Favori takımın: " + team;
+
+    }else{
+
+        box.innerHTML =
+        "Henüz favori takım seçmedin.";
+
+    }
+
+}
+
+}
+
+
+showHomeFavorite();

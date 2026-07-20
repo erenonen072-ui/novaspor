@@ -1324,3 +1324,23 @@ header {
     right:25px;
 
 }
+/* ⭐ TAKIM LOGOSU */
+
+
+.team-logo {
+
+width:70px;
+height:70px;
+object-fit:contain;
+
+}
+
+
+
+.team-logo-small {
+
+width:35px;
+height:35px;
+object-fit:contain;
+
+}

@@ -1,13 +1,23 @@
-function darkMode(){
+const darkBtn = document.getElementById("darkBtn");
+
+
+darkBtn.addEventListener("click", function(){
 
     document.body.classList.toggle("dark");
 
-    localStorage.setItem(
-        "darkMode",
-        document.body.classList.contains("dark")
-    );
 
-}
+    if(document.body.classList.contains("dark")){
+
+        localStorage.setItem("darkMode","true");
+
+    }else{
+
+        localStorage.setItem("darkMode","false");
+
+    }
+
+});
+
 
 
 if(localStorage.getItem("darkMode") === "true"){

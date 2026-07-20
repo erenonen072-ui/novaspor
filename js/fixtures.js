@@ -1,13 +1,8 @@
-console.log("YENİ FIXTURES DOSYASI");
-
 async function loadFixtures() {
 
     const box = document.getElementById("fixtures");
 
-    if (!box) {
-        console.log("fixtures alanı bulunamadı");
-        return;
-    }
+    if (!box) return;
 
 
     box.innerHTML = "📅 Fikstür yükleniyor...";
@@ -19,13 +14,7 @@ async function loadFixtures() {
         const response = await fetch("/api/fixtures");
 
 
-        console.log("API cevap kodu:", response.status);
-
-
         const data = await response.json();
-
-
-        console.log("API verisi:", data);
 
 
 
@@ -44,9 +33,7 @@ async function loadFixtures() {
 
 
 
-        data.response
-.filter(match => new Date(match.fixture.date) >= new Date())
-.forEach(match => {
+        data.response.slice(0,30).forEach(match => {
 
 
             const home = match.teams.home;
@@ -54,11 +41,13 @@ async function loadFixtures() {
             const away = match.teams.away;
 
 
+
             const date = new Date(match.fixture.date);
 
 
 
             box.innerHTML += `
+
 
             <div class="fixture-card">
 
@@ -68,6 +57,7 @@ async function loadFixtures() {
                     ${match.league.name}
 
                 </div>
+
 
 
                 <div class="fixture-header">
@@ -85,12 +75,15 @@ async function loadFixtures() {
 
 
 
+
                 <div class="teams">
 
 
                     <div class="team">
 
+
                         <img src="${home.logo}" alt="${home.name}">
+
 
                         <div class="team-name">
 
@@ -98,7 +91,9 @@ async function loadFixtures() {
 
                         </div>
 
+
                     </div>
+
 
 
 
@@ -110,15 +105,19 @@ async function loadFixtures() {
 
 
 
+
                     <div class="team">
 
+
                         <img src="${away.logo}" alt="${away.name}">
+
 
                         <div class="team-name">
 
                             ${away.name}
 
                         </div>
+
 
                     </div>
 
@@ -127,13 +126,18 @@ async function loadFixtures() {
 
 
 
+
                 <div class="score">
 
+
                     ${
-                        match.goals.home !== null
-                        ? match.goals.home + " - " + match.goals.away
-                        : "Yakında"
+                    match.goals.home !== null
+                    ?
+                    match.goals.home + " - " + match.goals.away
+                    :
+                    "Yakında"
                     }
+
 
                 </div>
 
@@ -141,22 +145,22 @@ async function loadFixtures() {
 
             </div>
 
+
             `;
 
 
         });
 
 
-        console.log("Fikstür kartları hazır");
-
 
     } catch(error) {
 
 
-        console.error("HATA:", error);
+        console.error(error);
 
 
         box.innerHTML = "❌ Fikstür yüklenemedi.";
+
 
     }
 

@@ -1,55 +1,55 @@
-function loadFixtures(){
+async function loadFixtures() {
 
     const box = document.getElementById("fixtures");
 
-    if(!box) return;
+    if (!box) return;
 
+    box.innerHTML = "📅 Fikstür yükleniyor...";
 
-    const matches = [
-        {
-            home:"Galatasaray",
-            away:"Fenerbahçe",
-            date:"20 Temmuz 2026 20:00"
-        },
-        {
-            home:"Beşiktaş",
-            away:"Trabzonspor",
-            date:"21 Temmuz 2026 19:00"
-        },
-        {
-            home:"Samsunspor",
-            away:"Başakşehir",
-            date:"22 Temmuz 2026 18:30"
+    try {
+
+        const response = await fetch("/api/fixtures");
+        const data = await response.json();
+
+        if (!data.response || data.response.length === 0) {
+            box.innerHTML = "⚽ Fikstür bulunamadı.";
+            return;
         }
-    ];
 
+        box.innerHTML = "";
 
-    box.innerHTML="";
+        data.response.forEach(match => {
 
+            box.innerHTML += `
+                <div class="match-card">
 
-    matches.forEach(match=>{
+                    <h3>
+                        ${match.teams.home.name}
+                        🆚
+                        ${match.teams.away.name}
+                    </h3>
 
-        box.innerHTML += `
+                    <p>📅 ${new Date(match.fixture.date).toLocaleString("tr-TR")}</p>
 
-        <div class="match">
+                    <p>🏟️ ${match.fixture.venue?.name || "Açıklanmadı"}</p>
 
-            <h3>
-            ${match.home}
-            ⚽
-            ${match.away}
-            </h3>
+                    <p>📍 ${match.fixture.venue?.city || ""}</p>
 
-            <p>
-            📅 ${match.date}
-            </p>
+                    <p>📺 Durum: ${match.fixture.status.long}</p>
 
-        </div>
+                </div>
+            `;
 
-        `;
+        });
 
-    });
+    } catch (error) {
+
+        console.error(error);
+
+        box.innerHTML = "❌ Fikstür yüklenemedi.";
+
+    }
 
 }
-
 
 loadFixtures();

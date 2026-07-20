@@ -23,17 +23,19 @@ async function loadFixtures() {
             box.innerHTML += `
                 <div class="match-card">
 
-                    <div class="teams">
-                        <strong>${match.teams.home.name}</strong>
-                        <span class="vs">🆚</span>
-                        <strong>${match.teams.away.name}</strong>
-                    </div>
+                    <h3>
+                        ${match.teams.home.name}
+                        🆚
+                        ${match.teams.away.name}
+                    </h3>
 
-                    <div class="match-info">
-                        📅 ${new Date(match.fixture.date).toLocaleString("tr-TR")}<br>
-                        🏟️ ${match.fixture.venue?.name || "Stadyum açıklanmadı"}<br>
-                        📍 ${match.fixture.venue?.city || ""}
-                    </div>
+                    <p>📅 ${new Date(match.fixture.date).toLocaleString("tr-TR")}</p>
+
+                    <p>🏟️ ${match.fixture.venue?.name || "Açıklanmadı"}</p>
+
+                    <p>📍 ${match.fixture.venue?.city || ""}</p>
+
+                    <p>📺 Durum: ${match.fixture.status.long}</p>
 
                 </div>
             `;
@@ -43,6 +45,7 @@ async function loadFixtures() {
     } catch (error) {
 
         console.error(error);
+
         box.innerHTML = "❌ Fikstür yüklenemedi.";
 
     }

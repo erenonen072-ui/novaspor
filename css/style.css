@@ -409,3 +409,180 @@ table{
     color:#111;
     transform:translateY(-3px);
 }
+/* =========================
+   NOVASPOR FİKSTÜR KARTLARI
+========================= */
+
+#fixtures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+
+.fixture-card {
+
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+
+    transition: 0.3s;
+
+    border: 1px solid #eee;
+
+}
+
+
+.fixture-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+
+}
+
+
+
+/* Lig adı */
+
+.league {
+
+    text-align:center;
+
+    font-weight:bold;
+
+    color:#f5b400;
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+/* Tarih */
+
+.fixture-header {
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* Takımlar */
+
+.teams {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+
+
+.team {
+
+    text-align:center;
+
+    width:100px;
+
+}
+
+
+
+.team img {
+
+    width:65px;
+
+    height:65px;
+
+    object-fit:contain;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.team-name {
+
+    font-weight:bold;
+
+    font-size:15px;
+
+}
+
+
+
+/* VS */
+
+.vs {
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:#999;
+
+}
+
+
+
+/* Skor */
+
+.score {
+
+    margin-top:20px;
+
+    text-align:center;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#111;
+
+}
+
+
+/* Mobil */
+
+@media(max-width:600px){
+
+    #fixtures {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .teams {
+
+        gap:10px;
+
+    }
+
+
+    .team {
+
+        width:80px;
+
+    }
+
+}

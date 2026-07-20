@@ -1,151 +1,44 @@
-console.log("NovaSpor fixtures başladı");
+function saveFavorite(){
 
-async function loadFixtures() {
 
-    const box = document.getElementById("fixtures");
+let team = document.getElementById("teamSelect").value;
 
-    if (!box) {
-        console.log("fixtures alanı bulunamadı");
-        return;
-    }
 
-    box.innerHTML = "📅 Fikstür yükleniyor...";
+localStorage.setItem(
+"favoriteTeam",
+team
+);
 
 
-    try {
+showFavorite();
 
-        const response = await fetch("/api/fixtures");
-
-        console.log("API durumu:", response.status);
-
-
-        const data = await response.json();
-
-        console.log("API verisi:", data);
-
-
-
-        if (!data.response || data.response.length === 0) {
-
-            box.innerHTML = "⚽ Fikstür bulunamadı.";
-
-            return;
-
-        }
-
-
-        box.innerHTML = "";
-
-
-        data.response.slice(0,30).forEach(match => {
-
-
-            const home = match.teams.home;
-
-            const away = match.teams.away;
-
-
-            const date = new Date(match.fixture.date);
-
-
-
-            box.innerHTML += `
-
-            <div class="fixture-card">
-
-
-                <div class="league">
-                    ${match.league.name}
-                </div>
-
-
-                <div class="fixture-header">
-
-                    📅 ${date.toLocaleDateString("tr-TR")}
-
-                    -
-
-                    ${date.toLocaleTimeString("tr-TR", {
-                        hour:"2-digit",
-                        minute:"2-digit"
-                    })}
-
-                </div>
-
-
-
-                <div class="teams">
-
-
-                    <div class="team">
-
-                        <img src="${home.logo}" alt="${home.name}">
-
-                        <div>
-                            ${home.name}
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-
-
-                    <div class="team">
-
-                        <img src="${away.logo}" alt="${away.name}">
-
-                        <div>
-                            ${away.name}
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="score">
-
-                    ${
-                    match.goals.home !== null
-                    ?
-                    match.goals.home + " - " + match.goals.away
-                    :
-                    "Yakında"
-                    }
-
-                </div>
-
-
-
-            </div>
-
-            `;
-
-
-        });
-
-
-        console.log("Fikstür kartları oluşturuldu");
-
-
-    } catch(error) {
-
-
-        console.error("Fikstür hatası:", error);
-
-
-        box.innerHTML = "❌ Fikstür yüklenemedi.";
-
-    }
 
 }
 
 
-loadFixtures();
+
+function showFavorite(){
+
+
+let team = localStorage.getItem("favoriteTeam");
+
+
+let box = document.getElementById("favoriteTeam");
+
+
+
+if(team && box){
+
+
+box.innerHTML =
+"⭐ Favori takımın: " + team;
+
+
+}
+
+
+}
+
+
+
+showFavorite();

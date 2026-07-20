@@ -6,8 +6,6 @@ export default async function handler(req, res) {
 
         let season;
 
-
-        // Futbol sezonu genelde ağustos ayında başlar
         if (now.getMonth() + 1 >= 8) {
             season = now.getFullYear();
         } else {
@@ -15,18 +13,34 @@ export default async function handler(req, res) {
         }
 
 
+        async function getFixtures(year) {
 
-        const response = await fetch(
-            `https://v3.football.api-sports.io/fixtures?league=203&season=${season}`,
-            {
-                headers: {
-                    "x-apisports-key": process.env.API_KEY
+            const response = await fetch(
+                `https://v3.football.api-sports.io/fixtures?league=203&season=${year}`,
+                {
+                    headers: {
+                        "x-apisports-key": process.env.API_KEY
+                    }
                 }
-            }
-        );
+            );
+
+            return await response.json();
+
+        }
 
 
-        const data = await response.json();
+
+        let data = await getFixtures(season);
+
+
+
+        // Yeni sezonda veri yoksa önceki sezona bak
+        if (!data.response || data.response.length === 0) {
+
+            data = await getFixtures(season - 1);
+
+        }
+
 
 
         res.status(200).json(data);

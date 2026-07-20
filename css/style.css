@@ -357,3 +357,55 @@ table{
 }
 
 }
+/* ===== HERO ===== */
+
+.hero{
+    background:linear-gradient(135deg,#ffc107,#ffdb4d);
+    color:#111;
+    text-align:center;
+    padding:50px 25px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.hero h1{
+    font-size:48px;
+    margin:0;
+}
+
+.hero h2{
+    border:none;
+    padding:0;
+    margin:15px 0;
+    font-size:28px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:700px;
+    margin:20px auto;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    background:#111;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    color:#111;
+    transform:translateY(-3px);
+}

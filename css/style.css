@@ -286,3 +286,74 @@ nav a.active{
     background:#111;
     color:#FFD700;
 }
+/* ===== MOBİL UYUMLULUK ===== */
+
+@media (max-width: 768px) {
+
+header{
+    flex-direction:column;
+    align-items:center;
+    padding:15px;
+}
+
+.logo{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+nav{
+    width:100%;
+    justify-content:center;
+    gap:10px;
+}
+
+nav a{
+    font-size:15px;
+    padding:8px 12px;
+}
+
+.hero{
+    padding:25px 15px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:32px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.live{
+    padding:20px 15px;
+}
+
+.match{
+    padding:15px;
+}
+
+.teams{
+    flex-direction:column;
+    gap:15px;
+}
+
+.score{
+    font-size:30px;
+}
+
+table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+}
+
+.footer{
+    padding:25px 15px;
+}
+
+.footer p{
+    font-size:14px;
+}
+
+}

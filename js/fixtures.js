@@ -1,56 +1,166 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+console.log("YENİ FIXTURES DOSYASI");
 
-    <title>NovaSpor - Fikstür</title>
+async function loadFixtures() {
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    const box = document.getElementById("fixtures");
 
-<body>
-
-<header>
-
-    <h1>⚽ NovaSpor</h1>
-
-    <nav>
-        <a href="index.html">🏠 Ana Sayfa</a>
-        <a href="live.html">🔴 Canlı</a>
-        <a href="standings.html">🏆 Puan Durumu</a>
-        <a href="fixtures.html" class="active">📅 Fikstür</a>
-        <a href="news.html">📰 Haberler</a>
-    </nav>
-
-</header>
+    if (!box) {
+        console.log("fixtures alanı bulunamadı");
+        return;
+    }
 
 
-<main>
-
-    <section>
-
-        <h2>📅 Süper Lig Fikstürü</h2>
-
-        <div id="fixtures">
-
-            📅 Fikstür yükleniyor...
-
-        </div>
-
-    </section>
-
-</main>
+    box.innerHTML = "📅 Fikstür yükleniyor...";
 
 
-<footer>
-
-    <p>© 2026 NovaSpor | Tüm hakları saklıdır.</p>
-
-</footer>
+    try {
 
 
-<script src="js/fixtures.js"></script>
+        const response = await fetch("/api/fixtures");
 
-</body>
-</html>
+
+        console.log("API cevap kodu:", response.status);
+
+
+        const data = await response.json();
+
+
+        console.log("API verisi:", data);
+
+
+
+        if (!data.response || data.response.length === 0) {
+
+
+            box.innerHTML = "⚽ Fikstür bulunamadı.";
+
+            return;
+
+        }
+
+
+
+        box.innerHTML = "";
+
+
+
+        data.response.slice(0,30).forEach(match => {
+
+
+            const home = match.teams.home;
+
+            const away = match.teams.away;
+
+
+            const date = new Date(match.fixture.date);
+
+
+
+            box.innerHTML += `
+
+            <div class="fixture-card">
+
+
+                <div class="league">
+
+                    ${match.league.name}
+
+                </div>
+
+
+                <div class="fixture-header">
+
+                    📅 ${date.toLocaleDateString("tr-TR")}
+
+                    -
+
+                    ${date.toLocaleTimeString("tr-TR", {
+                        hour:"2-digit",
+                        minute:"2-digit"
+                    })}
+
+                </div>
+
+
+
+                <div class="teams">
+
+
+                    <div class="team">
+
+                        <img src="${home.logo}" alt="${home.name}">
+
+                        <div class="team-name">
+
+                            ${home.name}
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="vs">
+
+                        VS
+
+                    </div>
+
+
+
+                    <div class="team">
+
+                        <img src="${away.logo}" alt="${away.name}">
+
+                        <div class="team-name">
+
+                            ${away.name}
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="score">
+
+                    ${
+                        match.goals.home !== null
+                        ? match.goals.home + " - " + match.goals.away
+                        : "Yakında"
+                    }
+
+                </div>
+
+
+
+            </div>
+
+            `;
+
+
+        });
+
+
+        console.log("Fikstür kartları hazır");
+
+
+    } catch(error) {
+
+
+        console.error("HATA:", error);
+
+
+        box.innerHTML = "❌ Fikstür yüklenemedi.";
+
+    }
+
+
+}
+
+
+
+loadFixtures();

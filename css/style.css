@@ -209,3 +209,27 @@ nav a{
     padding:20px;
     border-radius:18px;
 }
+/* ===== FOOTER ===== */
+
+.footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:50px;
+}
+
+.footer p{
+    margin:10px 0;
+}
+
+.footer a{
+    color:#FFD700;
+    text-decoration:none;
+    margin:0 8px;
+    transition:.3s;
+}
+
+.footer a:hover{
+    color:white;
+}

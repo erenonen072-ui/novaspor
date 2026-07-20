@@ -1,40 +1,151 @@
-function saveFavorite(){
+console.log("NovaSpor fixtures başladı");
 
-    const team =
-    document.getElementById("teamSelect").value;
+async function loadFixtures() {
 
+    const box = document.getElementById("fixtures");
 
-    localStorage.setItem(
-        "favoriteTeam",
-        team
-    );
+    if (!box) {
+        console.log("fixtures alanı bulunamadı");
+        return;
+    }
 
-
-    showFavorite();
-
-}
+    box.innerHTML = "📅 Fikstür yükleniyor...";
 
 
+    try {
 
-function showFavorite(){
+        const response = await fetch("/api/fixtures");
 
-    const team =
-    localStorage.getItem("favoriteTeam");
+        console.log("API durumu:", response.status);
 
 
-    if(team){
+        const data = await response.json();
 
-        document.getElementById("favoriteText").innerHTML =
-        "⭐ Favori takımın: " + team;
+        console.log("API verisi:", data);
+
+
+
+        if (!data.response || data.response.length === 0) {
+
+            box.innerHTML = "⚽ Fikstür bulunamadı.";
+
+            return;
+
+        }
+
+
+        box.innerHTML = "";
+
+
+        data.response.slice(0,30).forEach(match => {
+
+
+            const home = match.teams.home;
+
+            const away = match.teams.away;
+
+
+            const date = new Date(match.fixture.date);
+
+
+
+            box.innerHTML += `
+
+            <div class="fixture-card">
+
+
+                <div class="league">
+                    ${match.league.name}
+                </div>
+
+
+                <div class="fixture-header">
+
+                    📅 ${date.toLocaleDateString("tr-TR")}
+
+                    -
+
+                    ${date.toLocaleTimeString("tr-TR", {
+                        hour:"2-digit",
+                        minute:"2-digit"
+                    })}
+
+                </div>
+
+
+
+                <div class="teams">
+
+
+                    <div class="team">
+
+                        <img src="${home.logo}" alt="${home.name}">
+
+                        <div>
+                            ${home.name}
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+
+
+                    <div class="team">
+
+                        <img src="${away.logo}" alt="${away.name}">
+
+                        <div>
+                            ${away.name}
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="score">
+
+                    ${
+                    match.goals.home !== null
+                    ?
+                    match.goals.home + " - " + match.goals.away
+                    :
+                    "Yakında"
+                    }
+
+                </div>
+
+
+
+            </div>
+
+            `;
+
+
+        });
+
+
+        console.log("Fikstür kartları oluşturuldu");
+
+
+    } catch(error) {
+
+
+        console.error("Fikstür hatası:", error);
+
+
+        box.innerHTML = "❌ Fikstür yüklenemedi.";
 
     }
 
 }
 
 
-showFavorite();
-<script src="js/favorites.js"></script>
-
-</body>
-
-</html>
+loadFixtures();

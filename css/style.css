@@ -1573,20 +1573,11 @@ display:flex;
 
 }
 
-nav a{
-
-background:#fff;
-
-color:#111;
-
-padding:14px;
-
-border-radius:12px;
-
-text-align:center;
-
-font-size:16px;
-
+nav{
+    display:none !important;
+    flex-direction:column;
+    gap:10px;
+    width:100%;
 }
 
 }

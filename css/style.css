@@ -1154,112 +1154,88 @@ text-decoration:none;
 
 
 
-.quick-menu {
+.quick-menu{
 
 display:grid;
 
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(2,1fr);
 
-gap:12px;
+gap:15px;
 
-padding:15px;
+margin:20px;
 
 }
 
+.quick-menu a{
 
-
-
-.quick-menu a {
-
-background:white;
-
-padding:18px 10px;
+background:#fff;
 
 border-radius:18px;
+
+padding:20px;
 
 text-align:center;
 
 text-decoration:none;
 
-color:#222;
-
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+color:#111;
 
 font-weight:bold;
 
+font-size:18px;
+
+box-shadow:0 6px 16px rgba(0,0,0,.12);
+
+transition:.3s;
+
 }
 
-
-
-.quick-menu span {
+.quick-menu a span:first-child{
 
 display:block;
 
-font-size:28px;
+font-size:34px;
 
-margin-bottom:8px;
+margin-bottom:10px;
 
 }
 
+.quick-menu a:hover{
 
+transform:translateY(-4px);
 
+}
 
+@media(max-width:768px){
 
-.latest-box {
+.quick-menu{
 
 margin:15px;
 
-padding:20px;
-
-background:white;
-
-border-radius:18px;
-
-text-align:center;
-
 }
 
+.quick-menu a{
 
+padding:18px 10px;
 
-
-.dark .favorite-mini,
-.dark .quick-menu a,
-.dark .latest-box {
-
-background:#222;
-color:white;
+font-size:16px;
 
 }
-
-
-
-
-@media(max-width:600px){
-
-
-.quick-menu {
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
 
 }
 /* ANA SAYFA SON DOKUNUŞ */
 
 .hero-mini {
 
-    padding:18px;
+    padding:24px 20px;
     margin:15px auto;
     max-width:900px;
 
 }
 
 
-.hero-mini h2 {
-
-    font-size:24px;
-
+.hero-mini h2{
+font-size:30px;
 }
 
 

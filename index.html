@@ -202,7 +202,37 @@ Canlı skorlar, fikstür ve futbol haberleri tek yerde.
 <script src="js/darkmode.js"></script>
 
 
+<!-- Çerez Bildirimi -->
+<div id="cookieBox" class="cookie-box">
 
+<p>
+🍪 NovaSpor, daha iyi bir deneyim sunmak için çerezleri kullanır.
+</p>
+
+<button onclick="acceptCookies()">
+Kabul Et
+</button>
+
+</div>
+
+<script>
+
+function acceptCookies(){
+
+localStorage.setItem("cookiesAccepted","true");
+
+document.getElementById("cookieBox").style.display="none";
+
+}
+
+
+if(localStorage.getItem("cookiesAccepted")){
+
+document.getElementById("cookieBox").style.display="none";
+
+}
+
+</script>
 </body>
 
 </html>

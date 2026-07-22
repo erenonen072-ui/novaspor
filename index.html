@@ -200,7 +200,14 @@ Canlı skorlar, fikstür ve futbol haberleri tek yerde.
 <script src="js/favorites.js"></script>
 
 <script src="js/darkmode.js"></script>
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.querySelector("nav");
 
+menuBtn.addEventListener("click", function () {
+    nav.classList.toggle("show");
+});
+</script>
 
 <!-- Çerez Bildirimi -->
 <div id="cookieBox" class="cookie-box">

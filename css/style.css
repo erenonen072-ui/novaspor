@@ -123,14 +123,77 @@ nav a.active{
 /* FAVORİ TAKIM */
 
 .favorite-mini{
-    background:#fff;
-    margin:20px;
-    padding:18px;
-    border-radius:18px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+background:#fff;
+
+margin:25px auto;
+
+max-width:900px;
+
+padding:25px;
+
+border-radius:22px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+}
+
+.favorite-info h3{
+
+font-size:28px;
+
+margin-bottom:8px;
+
+}
+
+.favorite-info p{
+
+font-size:18px;
+
+margin-bottom:6px;
+
+}
+
+.favorite-info span{
+
+color:#666;
+
+font-size:15px;
+
+}
+
+.favorite-btn{
+
+background:#ffd400;
+
+color:#111;
+
+padding:14px 28px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.favorite-btn:hover{
+
+transform:translateY(-3px);
+
+background:#ffca00;
+
 }
 
 .favorite-mini h3{

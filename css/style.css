@@ -66,17 +66,15 @@ margin:0;
 }
 
 nav{
-
 display:flex;
-
+justify-content:center;
 gap:10px;
-
-align-items:center;
-
 flex-wrap:wrap;
-
 }
 
+#menuBtn{
+display:none;
+}
 nav a{
 
 padding:10px 16px;
@@ -960,6 +958,55 @@ gap:10px;
 }
 
 nav a{
+
+text-align:center;
+
+}
+
+}
+@media(max-width:768px){
+
+#menuBtn{
+
+display:block;
+
+width:100%;
+
+padding:14px;
+
+background:#ffd400;
+
+border:none;
+
+border-radius:12px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+margin-bottom:12px;
+
+}
+
+nav{
+
+display:none;
+
+flex-direction:column;
+
+}
+
+nav.show{
+
+display:flex;
+
+}
+
+nav a{
+
+width:100%;
 
 text-align:center;
 

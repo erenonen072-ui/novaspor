@@ -1119,21 +1119,12 @@ margin-top:8px;
 
 
 
-.favorite-mini {
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-margin:15px;
-padding:15px 20px;
-
-background:white;
-
-border-radius:18px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.12);
-
+.favorite-mini{
+    padding:16px 20px;
+    border-radius:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 

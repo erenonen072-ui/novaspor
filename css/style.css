@@ -1523,3 +1523,70 @@ nav a{
 }
 
 }
+/* ===== HAMBURGER MENÜ ===== */
+
+#menuBtn{
+    display:none;
+}
+
+@media (max-width:768px){
+
+#menuBtn{
+
+display:block;
+
+width:100%;
+
+padding:12px;
+
+margin:10px 0;
+
+background:#111;
+
+color:#fff;
+
+border:none;
+
+border-radius:12px;
+
+font-size:24px;
+
+cursor:pointer;
+
+}
+
+nav{
+
+display:none;
+
+flex-direction:column;
+
+gap:10px;
+
+width:100%;
+
+}
+
+nav.show{
+
+display:flex;
+
+}
+
+nav a{
+
+background:#fff;
+
+color:#111;
+
+padding:14px;
+
+border-radius:12px;
+
+text-align:center;
+
+font-size:16px;
+
+}
+
+}

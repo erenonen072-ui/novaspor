@@ -1704,3 +1704,58 @@ box-sizing:border-box;
 }
 
 }
+/* ===== MOBİL ANA SAYFA ===== */
+
+.hero-mini{
+    background:#ffd400;
+    border-radius:18px;
+    padding:22px;
+    margin:15px;
+    text-align:center;
+}
+
+.hero-mini h2{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.hero-text{
+    font-size:16px;
+    margin-bottom:18px;
+    font-weight:600;
+}
+
+.mobile-actions{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.mobile-actions a{
+    display:block;
+    background:#111;
+    color:#fff;
+    padding:15px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:17px;
+}
+
+.mobile-actions a:hover{
+    background:#333;
+}
+
+@media(min-width:769px){
+
+.mobile-actions{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+}

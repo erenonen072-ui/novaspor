@@ -28,12 +28,23 @@ OneSignalDeferred.push(async function(OneSignal) {
 
 </head>
 
+<script>
 
+const menuBtn=document.getElementById("menuBtn");
+const nav=document.querySelector("nav");
+
+menuBtn.onclick=function(){
+
+nav.classList.toggle("show");
+
+}
+
+</script>
 <body>
 
 
 <header class="top">
-
+<button id="menuBtn">☰ Menü</button>
 <h1 class="logo">⚽ NovaSpor</h1>
 
 <button id="menuBtn">☰</button>

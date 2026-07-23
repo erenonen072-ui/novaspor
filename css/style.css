@@ -255,17 +255,37 @@ transform:scale(1.05);
 =========================== */
 
 .news-hero{
+    padding:18px;
+    border-radius:18px;
+}
 
-background:linear-gradient(135deg,#ffd400,#ffb700);
+.news-badge{
+    padding:6px 12px;
+    font-size:12px;
+}
 
-border-radius:22px;
+.hero-left h2{
+    font-size:20px;
+    margin-bottom:8px;
+}
 
-padding:28px;
+.hero-left p{
+    font-size:14px;
+    margin-bottom:12px;
+}
 
-margin-bottom:18px;
+.hero-buttons{
+    gap:8px;
+}
 
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+.news-btn,
+.live-btn{
+    padding:8px 14px;
+    font-size:13px;
+}
 
+.hero-right{
+    width:70px;
 }
 
 .news-badge{
@@ -412,20 +432,34 @@ transform:translateX(-100%);
    KARTLAR
 =========================== */
 
+/* Kartlar */
 .card{
+    padding:16px;
+    margin-bottom:15px;
+    border-radius:16px;
+}
 
-background:#fff;
+/* Kart başlıkları */
+.card h3{
+    font-size:18px;
+    margin-bottom:12px;
+}
 
-border-radius:20px;
+/* Kart içeriği */
+#live,
+#homeStandings,
+#favorite,
+#homeFixtures{
+    padding:12px;
+    min-height:50px;
+    font-size:14px;
+}
 
-padding:22px;
-
-margin-bottom:20px;
-
-box-shadow:0 6px 18px rgba(0,0,0,.08);
-
-transition:.25s;
-
+/* Link butonları */
+.card a{
+    padding:10px 14px;
+    font-size:14px;
+    border-radius:10px;
 }
 
 .card:hover{

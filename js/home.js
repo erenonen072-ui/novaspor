@@ -5,37 +5,49 @@
 
 // ⭐ FAVORİ TAKIM
 
-const favButton = document.getElementById("favoriteBtn");
 
-const favName = document.getElementById("favoriteName");
-
-const favLogo = document.getElementById("favoriteLogo");
+const favoriteBtn =
+document.getElementById("favoriteBtn");
 
 
+const favoriteName =
+document.getElementById("favoriteName");
 
-const logos = {
 
-    "Galatasaray":
-    "https://media.api-sports.io/football/teams/645.png",
+const favoriteLogo =
+document.getElementById("favoriteLogo");
 
-    "Fenerbahçe":
-    "https://media.api-sports.io/football/teams/611.png",
 
-    "Beşiktaş":
-    "https://media.api-sports.io/football/teams/549.png",
 
-    "Trabzonspor":
-    "https://media.api-sports.io/football/teams/998.png"
+const teams = {
+
+
+"Galatasaray":
+"https://media.api-sports.io/football/teams/645.png",
+
+
+"Fenerbahçe":
+"https://media.api-sports.io/football/teams/611.png",
+
+
+"Beşiktaş":
+"https://media.api-sports.io/football/teams/549.png",
+
+
+"Trabzonspor":
+"https://media.api-sports.io/football/teams/998.png"
+
 
 };
 
 
 
 
-if(favButton){
+
+if(favoriteBtn){
 
 
-favButton.addEventListener("click",()=>{
+favoriteBtn.onclick = ()=>{
 
 
 let team = prompt(
@@ -44,19 +56,13 @@ let team = prompt(
 
 
 
-if(team){
+if(teams[team]){
 
 
-favName.innerHTML = team;
+favoriteName.innerHTML = team;
 
 
-
-if(logos[team]){
-
-favLogo.src = logos[team];
-
-}
-
+favoriteLogo.src = teams[team];
 
 
 localStorage.setItem(
@@ -65,17 +71,27 @@ team
 );
 
 
-
 localStorage.setItem(
 "favoriteLogo",
-logos[team] || ""
+teams[team]
+);
+
+
+}
+
+else if(team){
+
+
+alert(
+"Takım bulunamadı. Galatasaray, Fenerbahçe, Beşiktaş veya Trabzonspor yaz."
 );
 
 
 }
 
 
-});
+
+};
 
 
 }
@@ -84,7 +100,10 @@ logos[team] || ""
 
 
 
-// KAYITLI FAVORİ
+
+
+// kayıtlı takım
+
 
 let savedTeam =
 localStorage.getItem("favoriteTeam");
@@ -95,17 +114,19 @@ localStorage.getItem("favoriteLogo");
 
 
 
-if(savedTeam && favName){
+if(savedTeam){
 
-favName.innerHTML = savedTeam;
+favoriteName.innerHTML =
+savedTeam;
 
 }
 
 
 
-if(savedLogo && favLogo){
+if(savedLogo){
 
-favLogo.src = savedLogo;
+favoriteLogo.src =
+savedLogo;
 
 }
 
@@ -116,8 +137,10 @@ favLogo.src = savedLogo;
 
 // 🔴 CANLI MAÇ
 
+
 const live =
 document.getElementById("liveMatches");
+
 
 
 if(live){
@@ -125,7 +148,7 @@ if(live){
 
 live.innerHTML = `
 
-<div class="match-card">
+<div>
 
 ⚽ Galatasaray 2 - 1 Fenerbahçe
 
@@ -139,10 +162,13 @@ live.innerHTML = `
 
 
 
+
 // 📅 FİKSTÜR
+
 
 const fixtures =
 document.getElementById("fixtures");
+
 
 
 if(fixtures){
@@ -150,68 +176,14 @@ if(fixtures){
 
 fixtures.innerHTML = `
 
-<div class="match-card">
-
+<p>
 📅 Galatasaray - Trabzonspor
+</p>
 
-</div>
-
-
-<div class="match-card">
-
+<p>
 📅 Fenerbahçe - Beşiktaş
-
-</div>
+</p>
 
 `;
-
-}
-
-
-
-
-
-
-// 🌙 KARANLIK MOD
-
-
-
-
-
-
-if(darkButton){
-
-
-darkButton.addEventListener("click",()=>{
-
-
-document.body.classList.toggle("dark");
-
-
-localStorage.setItem(
-
-"dark",
-
-document.body.classList.contains("dark")
-
-);
-
-
-});
-
-
-}
-
-
-
-
-// kayıtlı karanlık mod
-
-
-if(localStorage.getItem("dark") === "true"){
-
-
-document.body.classList.add("dark");
-
 
 }

@@ -373,3 +373,86 @@ body.dark footer{
     background:#000;
 
 }
+/* KARANLIK MOD BUTONU */
+
+.dark-button{
+
+background:#111;
+
+color:white;
+
+border:none;
+
+padding:10px 15px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:18px;
+
+}
+
+
+
+
+/* DARK TEMA */
+
+body.dark{
+
+background:#111;
+
+color:white;
+
+}
+
+
+body.dark header{
+
+background:#000;
+
+}
+
+
+
+body.dark .box{
+
+background:#1e1e1e;
+
+color:white;
+
+}
+
+
+
+body.dark .news{
+
+background:#1e1e1e;
+
+}
+
+
+
+body.dark .news-item{
+
+background:#333;
+
+}
+
+
+
+body.dark nav a{
+
+background:#222;
+
+color:white;
+
+}
+
+
+
+body.dark footer{
+
+background:#000;
+
+}

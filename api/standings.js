@@ -37,7 +37,7 @@ export default async function handler(req, res) {
 
 
 
-        // Veri yoksa bir önceki sezona bak
+        // Veri yoksa önceki sezona bak
         if (!data.response || data.response.length === 0) {
 
             data = await getStandings(season - 1);

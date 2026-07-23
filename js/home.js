@@ -320,3 +320,58 @@ document.body.classList.add("dark");
 
 
 }
+// 🍪 ÇEREZ
+
+
+const cookieBox =
+document.getElementById("cookieBox");
+
+
+const cookieAccept =
+document.getElementById("cookieAccept");
+
+
+const cookieClose =
+document.getElementById("cookieClose");
+
+
+
+if(localStorage.getItem("cookieOK")){
+
+if(cookieBox)
+cookieBox.style.display="none";
+
+}
+
+
+
+
+if(cookieAccept){
+
+cookieAccept.onclick=()=>{
+
+localStorage.setItem(
+"cookieOK",
+"true"
+);
+
+
+cookieBox.style.display="none";
+
+};
+
+}
+
+
+
+if(cookieClose){
+
+cookieClose.onclick=()=>{
+
+
+cookieBox.style.display="none";
+
+
+};
+
+}

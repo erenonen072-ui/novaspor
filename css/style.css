@@ -684,29 +684,68 @@ font-size:18px;
 @media(max-width:768px){
 
 .hero-content{
-
-flex-direction:column;
-
-text-align:center;
-
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
 }
 
-.hero-right{
-
-width:140px;
-
+.hero-left{
+    flex:1;
 }
 
 .hero-left h2{
+    font-size:22px;
+    line-height:1.3;
+    margin-bottom:8px;
+    font-weight:700;
+}
 
-font-size:26px;
-
+.hero-left p{
+    font-size:14px;
+    line-height:1.5;
+    color:#555;
+    margin-bottom:15px;
 }
 
 .hero-buttons{
+    display:flex;
+    gap:10px;
+}
 
-justify-content:center;
+.news-btn,
+.live-btn{
+    padding:10px 16px;
+    font-size:14px;
+    border-radius:10px;
+}
 
+.hero-right{
+    width:90px;
+    flex-shrink:0;
+}
+
+.hero-right img{
+    width:100%;
+    border-radius:15px;
+}
+
+@media(max-width:768px){
+
+.hero-content{
+    align-items:center;
+}
+
+.hero-left h2{
+    font-size:18px;
+}
+
+.hero-left p{
+    font-size:13px;
+}
+
+.hero-right{
+    width:70px;
 }
 
 }

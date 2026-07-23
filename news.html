@@ -18,17 +18,35 @@
 
 <header>
 
-<h1>⚽ NovaSpor</h1>
+<div class="topbar">
+
+<h1>🟡 NOVASPOR</h1>
+
+<button id="menuBtn">☰</button>
+
+</div>
 
 
-<nav>
+<div id="overlay"></div>
+
+
+<nav id="menu">
 
 <a href="index.html">🏠 Ana Sayfa</a>
+
 <a href="live.html">🔴 Canlı</a>
+
 <a href="standings.html">🏆 Puan Durumu</a>
+
 <a href="fixtures.html">📅 Fikstür</a>
-<a href="news.html" class="active">📰 Haberler</a>
+
 <a href="favorites.html">⭐ Favoriler</a>
+
+<a href="about.html">ℹ️ Hakkımızda</a>
+
+<a href="contact.html">📞 İletişim</a>
+
+<a href="privacy.html">🔒 Gizlilik</a>
 
 </nav>
 
@@ -36,74 +54,65 @@
 
 
 
+
+
 <main>
 
 
-<h2 class="standing-title">
-📰 Güncel Futbol Haberleri
-</h2>
+<section class="hero">
 
-
-
-<section class="news-cards">
-
-
-
-<div class="news-card">
-
-<h3>⚽ Süper Lig'de Yeni Sezon Hazırlıkları</h3>
+<h2>📰 Haberler</h2>
 
 <p>
-Takımlar yeni sezon öncesi transfer çalışmalarına devam ediyor.
+NovaSpor futbol haberleri
 </p>
 
-<span>
-Bugün
-</span>
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h3>⚽ Son Haberler</h3>
+
+
+<div class="news-box">
+
+Google Sites haberlerini buraya ekleyebilirsin.
 
 </div>
-
-
-
-
-<div class="news-card">
-
-<h3>🔥 Transfer Gündemi</h3>
-
-<p>
-Kulüpler kadrolarını güçlendirmek için çalışmalarını sürdürüyor.
-</p>
-
-<span>
-Bugün
-</span>
-
-</div>
-
-
-
-
-<div class="news-card">
-
-<h3>🏆 Avrupa'da Futbol Heyecanı</h3>
-
-<p>
-Avrupa liglerinde yeni sezon hazırlıkları başladı.
-</p>
-
-<span>
-Bugün
-</span>
-
-</div>
-
 
 
 
 </section>
 
 
+
+
+<section class="card">
+
+
+<h3>🌐 Google Sites Haber Alanı</h3>
+
+
+<p>
+
+Buraya Google Sites'taki haber sayfanı gömebilirsin.
+
+</p>
+
+
+
+</section>
+
+
+
 </main>
+
+
 
 
 
@@ -115,6 +124,45 @@ Bugün
 </p>
 
 </footer>
+
+
+
+
+
+
+
+<script>
+
+
+const menuBtn = document.getElementById("menuBtn");
+
+const menu = document.getElementById("menu");
+
+const overlay = document.getElementById("overlay");
+
+
+menuBtn.onclick = () => {
+
+menu.classList.add("active");
+
+overlay.classList.add("active");
+
+};
+
+
+
+overlay.onclick = () => {
+
+menu.classList.remove("active");
+
+overlay.classList.remove("active");
+
+};
+
+
+</script>
+
+
 
 
 </body>

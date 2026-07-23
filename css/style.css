@@ -561,3 +561,45 @@ font-weight:bold;
 text-decoration:none;
 
 }
+.search-box{
+
+display:flex;
+
+gap:10px;
+
+padding:15px;
+
+background:white;
+
+}
+
+
+.search-box input{
+
+flex:1;
+
+padding:12px;
+
+border-radius:15px;
+
+border:1px solid #ddd;
+
+font-size:15px;
+
+}
+
+
+
+.search-box button{
+
+background:#f5c400;
+
+border:none;
+
+padding:12px 18px;
+
+border-radius:15px;
+
+font-weight:bold;
+
+}

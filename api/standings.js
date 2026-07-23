@@ -37,7 +37,7 @@ export default async function handler(req, res) {
 
 
 
-        // Veri yoksa önceki sezona dön
+        // Veri yoksa bir önceki sezona bak
         if (!data.response || data.response.length === 0) {
 
             data = await getStandings(season - 1);
@@ -50,11 +50,13 @@ export default async function handler(req, res) {
 
 
 
-    } catch (error) {
+    } catch(error) {
 
 
         res.status(500).json({
+
             error: error.message
+
         });
 
 

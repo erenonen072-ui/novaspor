@@ -480,3 +480,38 @@ background:#333;
 color:white;
 
 }
+.news-link{
+
+text-decoration:none;
+
+color:inherit;
+
+cursor:pointer;
+
+}
+
+
+
+.news-link b{
+
+display:inline-block;
+
+margin-top:15px;
+
+background:#ffd600;
+
+padding:10px 15px;
+
+border-radius:10px;
+
+color:#111;
+
+}
+
+
+
+.news-link:hover{
+
+transform:translateY(-5px);
+
+}

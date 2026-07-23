@@ -515,3 +515,45 @@ color:#111;
 transform:translateY(-5px);
 
 }
+.news{
+    margin-top:20px;
+}
+
+
+.news-item{
+
+display:block;
+
+background:white;
+
+padding:15px;
+
+margin-top:10px;
+
+border-radius:15px;
+
+text-decoration:none;
+
+color:#111;
+
+box-shadow:0 4px 10px #ddd;
+
+}
+
+
+
+.news-item:hover{
+
+transform:scale(1.02);
+
+}
+
+
+
+body.dark .news-item{
+
+background:#222;
+
+color:white;
+
+}

@@ -37,25 +37,19 @@
 <section class="card">
 
 
-<h2>🔎 Arama</h2>
+<h2>🔎 NovaSpor Arama</h2>
 
 
 <input 
-type="text" 
 id="searchInput"
-placeholder="Takım veya içerik ara..."
+type="text"
+placeholder="Takım, haber veya sayfa ara..."
+onkeyup="searchSite()"
 >
 
 
-<button onclick="searchSite()">
-Ara
-</button>
 
-
-
-<div id="results">
-
-</div>
+<div id="results"></div>
 
 
 </section>
@@ -65,30 +59,75 @@ Ara
 
 
 
+
 <script>
 
 
-const items = [
+const content = [
 
-"Galatasaray",
 
-"Fenerbahçe",
+{
+name:"Galatasaray",
+link:"favorites.html"
+},
 
-"Beşiktaş",
 
-"Trabzonspor",
+{
+name:"Fenerbahçe",
+link:"favorites.html"
+},
 
-"Süper Lig",
 
-"Canlı Maçlar",
+{
+name:"Beşiktaş",
+link:"favorites.html"
+},
 
-"Puan Durumu",
 
-"Fikstür",
+{
+name:"Trabzonspor",
+link:"favorites.html"
+},
 
-"Haberler"
+
+{
+name:"Canlı Maçlar",
+link:"live.html"
+},
+
+
+{
+name:"Puan Durumu",
+link:"standings.html"
+},
+
+
+{
+name:"Fikstür",
+link:"fixtures.html"
+},
+
+
+{
+name:"Haberler",
+link:"news.html"
+},
+
+
+{
+name:"Favoriler",
+link:"favorites.html"
+},
+
+
+{
+name:"Hakkımızda",
+link:"about.html"
+}
+
 
 ];
+
 
 
 
@@ -97,16 +136,18 @@ function searchSite(){
 
 
 let value =
-document.getElementById("searchInput")
+document
+.getElementById("searchInput")
 .value
 .toLowerCase();
 
 
 
 let results =
-items.filter(item =>
+content.filter(item =>
 
-item.toLowerCase()
+item.name
+.toLowerCase()
 .includes(value)
 
 );
@@ -118,37 +159,47 @@ document.getElementById("results");
 
 
 
-if(results.length === 0){
+box.innerHTML="";
 
 
-box.innerHTML =
-"❌ Sonuç bulunamadı.";
 
+if(value===""){
 
 return;
-
 
 }
 
 
 
-box.innerHTML="";
+if(results.length===0){
 
-
-
-results.forEach(result=>{
-
-
-box.innerHTML += `
-
+box.innerHTML=
+`
 <div class="search-result">
-
-⚽ ${result}
-
+❌ Sonuç bulunamadı
 </div>
-
 `;
 
+return;
+
+}
+
+
+
+results.forEach(item=>{
+
+
+box.innerHTML +=
+
+`
+
+<a href="${item.link}" class="search-result">
+
+⚽ ${item.name}
+
+</a>
+
+`;
 
 });
 
@@ -158,6 +209,7 @@ box.innerHTML += `
 
 
 </script>
+
 
 
 </body>

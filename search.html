@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaSpor - Arama</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="topbar">
+
+<h1>🟡 NOVASPOR</h1>
+
+<a href="index.html">🏠</a>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="card">
+
+
+<h2>🔎 Arama</h2>
+
+
+<input 
+type="text" 
+id="searchInput"
+placeholder="Takım veya içerik ara..."
+>
+
+
+<button onclick="searchSite()">
+Ara
+</button>
+
+
+
+<div id="results">
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+<script>
+
+
+const items = [
+
+"Galatasaray",
+
+"Fenerbahçe",
+
+"Beşiktaş",
+
+"Trabzonspor",
+
+"Süper Lig",
+
+"Canlı Maçlar",
+
+"Puan Durumu",
+
+"Fikstür",
+
+"Haberler"
+
+];
+
+
+
+
+function searchSite(){
+
+
+let value =
+document.getElementById("searchInput")
+.value
+.toLowerCase();
+
+
+
+let results =
+items.filter(item =>
+
+item.toLowerCase()
+.includes(value)
+
+);
+
+
+
+let box =
+document.getElementById("results");
+
+
+
+if(results.length === 0){
+
+
+box.innerHTML =
+"❌ Sonuç bulunamadı.";
+
+
+return;
+
+
+}
+
+
+
+box.innerHTML="";
+
+
+
+results.forEach(result=>{
+
+
+box.innerHTML += `
+
+<div class="search-result">
+
+⚽ ${result}
+
+</div>
+
+`;
+
+
+});
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>

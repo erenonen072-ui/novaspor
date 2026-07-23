@@ -175,8 +175,7 @@ fixtures.innerHTML = `
 // 🌙 KARANLIK MOD
 
 
-const darkButton =
-document.getElementById("darkMode");
+
 
 
 

@@ -1,22 +1,19 @@
 // ======================
-// NOVASPOR HOME JS
+// NOVASPOR HOME JS FIX
 // ======================
 
 
 // ⭐ FAVORİ TAKIM
 
-const favButton = document.querySelector(".box button");
+const favButton = document.getElementById("favoriteBtn");
 
 const favName = document.getElementById("favoriteName");
-
-const favLogo = document.getElementById("favoriteLogo");
-
 
 
 if(favButton){
 
 
-favButton.addEventListener("click",()=>{
+favButton.onclick = function(){
 
 
 let team = prompt(
@@ -28,7 +25,7 @@ let team = prompt(
 if(team){
 
 
-favName.innerText = team;
+favName.innerHTML = team;
 
 
 localStorage.setItem(
@@ -40,29 +37,27 @@ team
 }
 
 
-});
+};
 
 
 }
 
 
 
-
-let saved =
+let oldTeam =
 localStorage.getItem("favoriteTeam");
 
 
-if(saved && favName){
+if(oldTeam && favName){
 
-favName.innerText = saved;
+favName.innerHTML = oldTeam;
 
 }
 
 
 
 
-
-// 🔴 CANLI MAÇ ÖRNEK
+// 🔴 CANLI MAÇ
 
 const live =
 document.getElementById("liveMatches");
@@ -70,10 +65,9 @@ document.getElementById("liveMatches");
 
 if(live){
 
-
 live.innerHTML = `
 
-<div>
+<div class="match">
 
 ⚽ Galatasaray 2 - 1 Fenerbahçe
 
@@ -86,8 +80,7 @@ live.innerHTML = `
 
 
 
-
-// 📅 FİKSTÜR ÖRNEK
+// 📅 FİKSTÜR
 
 const fixtures =
 document.getElementById("fixtures");
@@ -95,64 +88,12 @@ document.getElementById("fixtures");
 
 if(fixtures){
 
-
 fixtures.innerHTML = `
 
-<div>
+<p>Galatasaray - Trabzonspor</p>
 
-📅 Galatasaray - Trabzonspor
-
-</div>
-
-
-<div>
-
-📅 Fenerbahçe - Beşiktaş
-
-</div>
+<p>Fenerbahçe - Beşiktaş</p>
 
 `;
 
 }
-
-
-
-
-
-
-// 🌙 KARANLIK MOD EKLEME
-
-
-const darkButton =
-document.createElement("button");
-
-
-darkButton.innerHTML="🌙";
-
-
-darkButton.style.position="fixed";
-
-darkButton.style.right="20px";
-
-darkButton.style.bottom="20px";
-
-darkButton.style.zIndex="999";
-
-
-
-document.body.appendChild(
-darkButton
-);
-
-
-
-
-darkButton.onclick=()=>{
-
-
-document.body.classList.toggle(
-"dark"
-);
-
-
-};

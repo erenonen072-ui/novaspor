@@ -1,1015 +1,318 @@
-/* =====================================
-   NOVASPOR STYLE.CSS v2
-   Bölüm 1/4
-===================================== */
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f4f4;
+
+    background:#f5f5f5;
     color:#222;
-    line-height:1.6;
+
 }
 
-/* HEADER */
+
+/* Üst Menü */
 
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
 
-    background:#111;
-
-    padding:18px 20px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-header h1{
-
-font-size:32px;
-
-font-weight:800;
-
-color:#ffd400;
-
-margin:0;
-
-}
-
-/* MENÜ */
-
-#menuBtn{
-    display:none;
-    width:100%;
-    padding:12px;
     background:#ffd400;
-    color:#111;
-    border:none;
-    border-radius:12px;
-    font-size:24px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-bottom:12px;
-}
-
-nav{
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-}
-
-#menuBtn{
-display:none;
-}
-nav a{
-
-padding:10px 16px;
-
-border-radius:12px;
-
-background:#1f1f1f;
-
-color:#fff;
-
-text-decoration:none;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-nav a:hover{
-
-background:#ffd400;
-
-color:#111;
-
-}
-
-nav a:hover,
-nav a.active{
-    background:#ffd400;
-    color:#111;
-}
-
-/* DARK MODE */
-
-#darkBtn{
-    position:absolute;
-    right:15px;
-    top:15px;
-    border:none;
-    background:#333;
-    color:#fff;
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    cursor:pointer;
-}
-
-/* HERO */
-
-.hero-mini{
-    margin:20px;
-    padding:25px;
-    border-radius:20px;
-    background:linear-gradient(135deg,#ffd54f,#ffb300);
-    text-align:center;
-    color:#111;
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-.hero-mini h2{
-    font-size:32px;
-    margin-bottom:10px;
-}
-
-.hero-text{
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-.hero-sub{
-    font-size:15px;
-    opacity:.9;
-}
-
-/* FAVORİ TAKIM */
-
-.favorite-mini{
-
-background:#fff;
-
-margin:25px auto;
-
-max-width:900px;
-
-padding:25px;
-
-border-radius:22px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-gap:20px;
-
-box-shadow:0 10px 25px rgba(0,0,0,.10);
-
-}
-
-.favorite-info h3{
-
-font-size:28px;
-
-margin-bottom:8px;
-
-}
-
-.favorite-info p{
-
-font-size:18px;
-
-margin-bottom:6px;
-
-}
-
-.favorite-info span{
-
-color:#666;
-
-font-size:15px;
-
-}
-
-.favorite-btn{
-
-background:#ffd400;
-
-color:#111;
-
-padding:14px 28px;
-
-border-radius:30px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-transition:.3s;
-
-}
-
-.favorite-btn:hover{
-
-transform:translateY(-3px);
-
-background:#ffca00;
-
-}
-
-.favorite-mini h3{
-    margin-bottom:5px;
-}
-
-.favorite-mini a{
-    background:#ffd400;
-    color:#111;
-    text-decoration:none;
-    padding:10px 18px;
-    border-radius:20px;
-    font-weight:bold;
-}
-/* =====================================
-   NOVASPOR STYLE.CSS v2
-   Bölüm 1/4
-===================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f4f4;
-    color:#222;
-    line-height:1.6;
-}
-
-/* HEADER */
-
-header{
-    background:#111;
-    color:#fff;
     padding:15px;
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
+
 }
 
-header h1{
-    text-align:center;
-    font-size:30px;
-    margin-bottom:15px;
-}
 
-/* MENÜ */
+.topbar{
 
-#menuBtn{
-    display:none;
-    width:100%;
-    padding:12px;
-    background:#ffd400;
-    color:#111;
-    border:none;
-    border-radius:12px;
-    font-size:24px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-bottom:12px;
-}
-
-nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-nav a{
-    text-decoration:none;
-    color:#fff;
-    background:#222;
-    padding:10px 16px;
-    border-radius:10px;
-    transition:.3s;
-    font-size:15px;
-}
-
-nav a:hover,
-nav a.active{
-    background:#ffd400;
-    color:#111;
-}
-
-/* DARK MODE */
-
-#darkBtn{
-    position:absolute;
-    right:15px;
-    top:15px;
-    border:none;
-    background:#333;
-    color:#fff;
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    cursor:pointer;
-}
-
-/* HERO */
-
-.hero-mini{
-    margin:20px;
-    padding:25px;
-    border-radius:20px;
-    background:linear-gradient(135deg,#ffd54f,#ffb300);
-    text-align:center;
-    color:#111;
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-.hero-mini h2{
-    font-size:32px;
-    margin-bottom:10px;
-}
-
-.hero-text{
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-.hero-sub{
-    font-size:15px;
-    opacity:.9;
-}
-
-/* FAVORİ TAKIM */
-
-.favorite-mini{
-    background:#fff;
-    margin:20px;
-    padding:18px;
-    border-radius:18px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.favorite-mini h3{
-    margin-bottom:5px;
-}
-
-.favorite-mini a{
-    background:#ffd400;
-    color:#111;
-    text-decoration:none;
-    padding:10px 18px;
-    border-radius:20px;
-    font-weight:bold;
-}
-/* =====================================
-   NOVASPOR STYLE.CSS v2
-   Bölüm 1/4
-===================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f4f4;
-    color:#222;
-    line-height:1.6;
-}
-
-/* HEADER */
-
-header{
-    background:#111;
-    color:#fff;
-    padding:15px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
-}
-
-header h1{
-    text-align:center;
-    font-size:30px;
-    margin-bottom:15px;
-}
-
-/* MENÜ */
-
-#menuBtn{
-    display:none;
-    width:100%;
-    padding:12px;
-    background:#ffd400;
-    color:#111;
-    border:none;
-    border-radius:12px;
-    font-size:24px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-bottom:12px;
-}
-
-nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-nav a{
-    text-decoration:none;
-    color:#fff;
-    background:#222;
-    padding:10px 16px;
-    border-radius:10px;
-    transition:.3s;
-    font-size:15px;
-}
-
-nav a:hover,
-nav a.active{
-    background:#ffd400;
-    color:#111;
-}
-
-/* DARK MODE */
-
-#darkBtn{
-    position:absolute;
-    right:15px;
-    top:15px;
-    border:none;
-    background:#333;
-    color:#fff;
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    cursor:pointer;
-}
-
-/* HERO */
-
-.hero-mini{
-    margin:20px;
-    padding:25px;
-    border-radius:20px;
-    background:linear-gradient(135deg,#ffd54f,#ffb300);
-    text-align:center;
-    color:#111;
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-.hero-mini h2{
-    font-size:32px;
-    margin-bottom:10px;
-}
-
-.hero-text{
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-.hero-sub{
-    font-size:15px;
-    opacity:.9;
-}
-
-/* FAVORİ TAKIM */
-
-.favorite-mini{
-    background:#fff;
-    margin:20px;
-    padding:18px;
-    border-radius:18px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.favorite-mini h3{
-    margin-bottom:5px;
-}
-
-.favorite-mini a{
-    background:#ffd400;
-    color:#111;
-    text-decoration:none;
-    padding:10px 18px;
-    border-radius:20px;
-    font-weight:bold;
-}
-/* =====================================
-   NOVASPOR STYLE.CSS v2
-   Bölüm 2/4
-===================================== */
-
-/* HIZLI ERİŞİM */
-
-.quick-menu{
-
-display:flex;
-
-justify-content:center;
-
-gap:25px;
-
-flex-wrap:wrap;
-
-margin:35px auto;
-
-max-width:900px;
 
 }
 
-.quick-menu a{
 
-width:250px;
+.topbar h1{
 
-height:170px;
-
-background:#fff;
-
-border-radius:24px;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-text-decoration:none;
-
-color:#111;
-
-box-shadow:0 10px 25px rgba(0,0,0,.10);
-
-transition:.3s;
-
-}
-
-.quick-menu a:hover{
-
-transform:translateY(-6px);
-
-box-shadow:0 18px 35px rgba(0,0,0,.18);
-
-}
-
-.quick-menu span:first-child{
-
-font-size:48px;
-
-margin-bottom:15px;
-
-}
-
-.quick-menu span:last-child{
-
-font-size:22px;
-
-font-weight:bold;
-
-}
-
-.quick-menu a{
-    background:#fff;
-    border-radius:18px;
-    padding:20px;
-    text-align:center;
-    text-decoration:none;
-    color:#111;
-    box-shadow:0 6px 16px rgba(0,0,0,.10);
-    transition:.3s;
-    font-weight:bold;
-}
-
-.quick-menu a:hover{
-    transform:translateY(-4px);
-}
-
-.quick-menu span:first-child{
-    display:block;
-    font-size:34px;
-    margin-bottom:10px;
-}
-
-/* KARTLAR */
-
-.card{
-    background:#fff;
-    margin:20px;
-    padding:20px;
-    border-radius:18px;
-    box-shadow:0 6px 16px rgba(0,0,0,.08);
-}
-
-.card h2{
-    margin-bottom:10px;
     font-size:22px;
-}
-
-.card p{
-    color:#555;
-    line-height:1.7;
-}
-
-/* BUTONLAR */
-
-button,
-.btn{
-    background:#ffd400;
     color:#111;
-    border:none;
-    border-radius:12px;
-    padding:12px 18px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
+
 }
 
-button:hover,
-.btn:hover{
-    transform:translateY(-2px);
-}
 
-/* FOOTER */
-
-footer{
-    background:#111;
-    color:#fff;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-}
-
-footer p{
-    font-size:14px;
-    opacity:.85;
-}
-/* =====================================
-   NOVASPOR STYLE.CSS v2
-   Bölüm 3/4
-===================================== */
-
-/* MOBİL */
-
-@media (max-width:768px){
-
-header{
-    padding:12px;
-}
-
-header h1{
-    font-size:24px;
-    margin-bottom:10px;
-}
 
 #menuBtn{
-    display:block;
+
+    background:#111;
+    color:white;
+    border:none;
+    font-size:24px;
+    padding:8px 12px;
+    border-radius:10px;
+    cursor:pointer;
+
 }
 
+
+
+/* Menü */
+
 nav{
+
     display:none;
     flex-direction:column;
-    gap:10px;
-    margin-top:10px;
+    margin-top:15px;
+    background:white;
+    border-radius:15px;
+    padding:10px;
+
 }
 
-nav.show{
+
+
+nav.active{
+
     display:flex;
+
 }
+
+
 
 nav a{
-    width:100%;
+
+    text-decoration:none;
+    color:#111;
+    padding:12px;
+    border-bottom:1px solid #ddd;
+    font-weight:bold;
+
+}
+
+
+
+nav a:last-child{
+
+    border-bottom:none;
+
+}
+
+
+
+/* Ana Alan */
+
+main{
+
+    padding:15px;
+
+}
+
+
+
+.hero{
+
+    background:#111;
+    color:white;
+    padding:20px;
+    border-radius:20px;
+    margin-bottom:15px;
     text-align:center;
-    padding:14px;
-    font-size:16px;
+
 }
 
-.hero-mini{
-    margin:15px;
-    padding:22px 16px;
+
+
+.hero h2{
+
+    font-size:22px;
+    margin-bottom:8px;
+
 }
 
-.hero-mini h2{
-    font-size:28px;
-}
 
-.hero-text{
-    font-size:17px;
-}
 
-.hero-sub{
+.hero p{
+
     font-size:14px;
+
 }
 
-.favorite-mini{
-    margin:15px;
-    padding:16px;
-    flex-direction:column;
-    gap:15px;
-    text-align:center;
-}
 
-.favorite-mini a{
-    width:100%;
-}
 
-.quick-menu{
-    margin:15px;
-    gap:12px;
-}
 
-.quick-menu a{
-    padding:18px 12px;
-}
+/* Kartlar */
 
-.quick-menu span:first-child{
-    font-size:30px;
-}
 
 .card{
-    margin:15px;
-}
 
-footer{
-    padding:18px;
-}
-
-}
-
-/* TABLET */
-
-@media (min-width:769px) and (max-width:1024px){
-
-.quick-menu{
-    grid-template-columns:repeat(2,1fr);
-}
-
-}
-/* =====================================
-   NOVASPOR STYLE.CSS v2
-   Bölüm 4/4
-===================================== */
-
-/* ÇEREZ KUTUSU */
-
-.cookie-box{
-    position:fixed;
-    left:15px;
-    right:15px;
-    bottom:15px;
-    background:#111;
-    color:#fff;
-    padding:18px;
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,.3);
-    z-index:9999;
-}
-
-.cookie-box p{
+    background:white;
+    border-radius:20px;
+    padding:15px;
     margin-bottom:15px;
-    font-size:15px;
+    box-shadow:0 3px 10px #ddd;
+
 }
 
-.cookie-buttons{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
+
+
+.card h3{
+
+    margin-bottom:12px;
+    font-size:18px;
+
 }
 
-.cookie-buttons button,
-.cookie-buttons a{
-    flex:1;
-    min-width:140px;
-    text-align:center;
+
+
+.card a{
+
+    display:block;
+    margin-top:15px;
     text-decoration:none;
-    padding:12px;
-    border-radius:12px;
-    font-weight:bold;
-}
-
-.cookie-buttons button{
     background:#ffd400;
     color:#111;
-    border:none;
-    cursor:pointer;
-}
-
-.cookie-buttons a{
-    background:#2c2c2c;
-    color:#fff;
-}
-
-/* KARA MOD */
-
-body.dark{
-    background:#121212;
-    color:#eee;
-}
-
-body.dark header,
-body.dark footer{
-    background:#000;
-}
-
-body.dark .hero-mini{
-    background:linear-gradient(135deg,#444,#222);
-    color:#fff;
-}
-
-body.dark .favorite-mini,
-body.dark .quick-menu a,
-body.dark .card{
-    background:#1f1f1f;
-    color:#fff;
-}
-
-body.dark .card p{
-    color:#ccc;
-}
-
-/* KAYDIRMA ÇUBUĞU */
-
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#ffd400;
-    border-radius:20px;
-}
-
-::-webkit-scrollbar-track{
-    background:#e9e9e9;
-}
-@media(max-width:768px){
-
-.favorite-mini{
-
-flex-direction:column;
-
-text-align:center;
-
-padding:20px;
+    text-align:center;
+    padding:10px;
+    border-radius:12px;
+    font-weight:bold;
 
 }
 
-.favorite-btn{
 
-width:100%;
 
-}
+/* Favori */
 
-.favorite-info h3{
+#favorite,
+#live{
 
-font-size:24px;
-
-}
-
-}
-@media(max-width:768px){
-
-.quick-menu{
-
-margin:20px 15px;
-
-gap:15px;
+    background:#f8f8f8;
+    padding:15px;
+    border-radius:12px;
+    font-size:15px;
 
 }
 
-.quick-menu a{
 
-width:100%;
 
-height:140px;
+/* Puan Tablosu */
 
-}
 
-.quick-menu span:first-child{
+table{
 
-font-size:40px;
+    width:100%;
+    border-collapse:collapse;
 
 }
 
-.quick-menu span:last-child{
 
-font-size:20px;
 
-}
+th{
 
-}
-@media(max-width:768px){
-
-header{
-
-flex-direction:column;
-
-gap:15px;
+    background:#111;
+    color:white;
+    padding:10px;
 
 }
 
-nav{
 
-display:grid;
 
-grid-template-columns:1fr 1fr;
+td{
 
-width:100%;
-
-gap:10px;
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
 
 }
 
-nav a{
 
-text-align:center;
+
+/* Maçlar */
+
+
+.match{
+
+    background:#f5f5f5;
+    padding:12px;
+    border-radius:12px;
+    margin-bottom:10px;
 
 }
 
+
+
+.match strong{
+
+    display:block;
+
 }
-@media(max-width:768px){
+
+
+
+.match span{
+
+    color:#666;
+    font-size:14px;
+
+}
+
+
+
+/* Footer */
+
+footer{
+
+    text-align:center;
+    padding:20px;
+    color:#777;
+
+}
+
+
+
+
+
+
+/* Tablet ve büyük ekran */
+
+@media(min-width:700px){
+
+
+main{
+
+    max-width:700px;
+    margin:auto;
+
+}
+
+
 
 #menuBtn{
 
-display:block;
-
-width:100%;
-
-padding:14px;
-
-background:#ffd400;
-
-border:none;
-
-border-radius:12px;
-
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-margin-bottom:12px;
+    display:none;
 
 }
+
+
 
 nav{
 
-display:none;
-
-flex-direction:column;
-
-}
-
-nav.show{
-
-display:flex;
+    display:flex;
+    flex-direction:row;
+    background:none;
 
 }
+
+
 
 nav a{
 
-width:100%;
-
-text-align:center;
+    border:none;
 
 }
+
+
 
 }

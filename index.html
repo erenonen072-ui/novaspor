@@ -385,7 +385,29 @@ overlay.classList.remove("active");
 
 <script src="js/home.js"></script>
 
+<script>
 
+function goSearch(){
+
+let value =
+document.getElementById("mainSearch").value;
+
+
+if(value.trim() !== ""){
+
+localStorage.setItem(
+"searchText",
+value
+);
+
+
+window.location.href="search.html";
+
+}
+
+}
+
+</script>
 </body>
 
 </html>

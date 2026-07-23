@@ -498,3 +498,31 @@ background:#eee;
 color:#333;
 
 }
+#searchInput{
+
+width:100%;
+
+padding:12px;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+
+font-size:16px;
+
+}
+
+
+.search-result{
+
+background:#f5c400;
+
+padding:12px;
+
+margin-top:10px;
+
+border-radius:12px;
+
+font-weight:bold;
+
+}

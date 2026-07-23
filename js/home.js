@@ -187,3 +187,44 @@ fixtures.innerHTML = `
 `;
 
 }
+// 🌙 KARANLIK MOD
+
+
+const darkButton =
+document.getElementById("darkMode");
+
+
+
+if(darkButton){
+
+
+darkButton.addEventListener("click",()=>{
+
+
+document.body.classList.toggle("dark");
+
+
+localStorage.setItem(
+"darkMode",
+document.body.classList.contains("dark")
+);
+
+
+});
+
+
+}
+
+
+
+
+// kayıtlı tema
+
+
+if(localStorage.getItem("darkMode") === "true"){
+
+
+document.body.classList.add("dark");
+
+
+}

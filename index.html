@@ -6,59 +6,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NovaSpor - Futbol Dünyası</title>
+<title>NovaSpor</title>
 
 <link rel="stylesheet" href="css/style.css">
 
-<!-- OneSignal -->
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-
-<script>
-window.OneSignalDeferred = window.OneSignalDeferred || [];
-
-OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-        appId: "c8716cfa-41f6-499f-9fe2-9c1933af15c8",
-        notifyButton: {
-            enable: true
-        }
-    });
-});
-</script>
-
 </head>
 
-<script>
 
-const menuBtn=document.getElementById("menuBtn");
-const nav=document.querySelector("nav");
-
-menuBtn.onclick=function(){
-
-nav.classList.toggle("show");
-
-}
-
-</script>
 <body>
 
 
-<header class="top">
-<button id="menuBtn">☰ Menü</button>
-<h1 class="logo">⚽ NovaSpor</h1>
+<header>
+
+<div class="topbar">
+
+<h1>🟡 NOVASPOR</h1>
 
 <button id="menuBtn">☰</button>
-<nav>
 
-<a href="index.html" class="active">🏠 Ana Sayfa</a>
+</div>
+
+
+
+<nav id="menu">
+
+
+<a href="index.html">🏠 Ana Sayfa</a>
 
 <a href="live.html">🔴 Canlı</a>
 
 <a href="standings.html">🏆 Puan Durumu</a>
 
 <a href="fixtures.html">📅 Fikstür</a>
-
-<a href="news.html">📰 Haberler</a>
 
 <a href="favorites.html">⭐ Favoriler</a>
 
@@ -68,12 +47,8 @@ nav.classList.toggle("show");
 
 <a href="privacy.html">🔒 Gizlilik</a>
 
+
 </nav>
-
-
-<button id="darkBtn">
-🌙
-</button>
 
 
 </header>
@@ -85,41 +60,40 @@ nav.classList.toggle("show");
 <main>
 
 
-<section class="hero-mini">
+<section class="hero">
 
-<h2>⚽ NovaSpor</h2>
 
-<p class="hero-text">
-Türkiye'nin Dijital Spor Merkezi
+<h2>Futbolun Yeni Adresi</h2>
+
+<p>
+Canlı skorlar • Fikstür • Puan Durumu
 </p>
 
-<p class="hero-sub">
-Son dakika futbol haberleri, puan durumu ve fikstürü tek adreste.
-</p>
 
 </section>
 
 
 
-<section class="favorite-mini">
 
-<div class="favorite-info">
 
-<h3>⭐ Favori Takım</h3>
 
-<p id="homeFavorite">
-Henüz favori takım seçmediniz.
-</p>
+<section class="card">
 
-<span>
-Takımınızı seçerek ana sayfanızı kişiselleştirin.
-</span>
+
+<h3>🔴 Canlı Maçlar</h3>
+
+
+<div id="live">
+
+⚽ Şu anda canlı maç bulunmuyor.
 
 </div>
 
-<a href="favorites.html" class="favorite-btn">
-Takım Seç
+
+<a href="live.html">
+Canlı Maçlar →
 </a>
+
 
 </section>
 
@@ -127,27 +101,92 @@ Takım Seç
 
 
 
-<section class="quick-menu">
+
+
+<section class="card">
+
+
+<h3>⭐ Favori Takımım</h3>
+
+
+<div id="favorite">
+
+⭐ Henüz takım seçilmedi.
+
+</div>
+
+
+<a href="favorites.html">
+Takım Seç →
+</a>
+
+
+</section>
 
 
 
-<section class="quick-menu">
+
+
+
+
+<section class="card">
+
+
+<h3>🏆 Puan Durumu</h3>
+
+
+<table>
+
+
+<tr>
+
+<th>#</th>
+<th>Takım</th>
+<th>P</th>
+
+</tr>
+
+
+
+<tr>
+
+<td>1</td>
+<td>Galatasaray</td>
+<td>82</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>2</td>
+<td>Fenerbahçe</td>
+<td>79</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>3</td>
+<td>Beşiktaş</td>
+<td>65</td>
+
+</tr>
+
+
+
+</table>
+
+
 
 <a href="standings.html">
-
-<span>🏆</span>
-
-<span>Puan Durumu</span>
-
+Tüm Puan Durumu →
 </a>
 
-<a href="fixtures.html">
 
-<span>📅</span>
-
-<span>Fikstür</span>
-
-</a>
 
 </section>
 
@@ -155,6 +194,58 @@ Takım Seç
 
 
 
+
+
+
+<section class="card">
+
+
+<h3>📅 Yaklaşan Maçlar</h3>
+
+
+
+<div class="match">
+
+
+<strong>
+Galatasaray - Samsunspor
+</strong>
+
+
+<span>
+26 Temmuz • 20:00
+</span>
+
+
+</div>
+
+
+
+
+<div class="match">
+
+
+<strong>
+Fenerbahçe - Kasımpaşa
+</strong>
+
+
+<span>
+27 Temmuz • 19:00
+</span>
+
+
+</div>
+
+
+
+<a href="fixtures.html">
+Tüm Fikstür →
+</a>
+
+
+
+</section>
 
 
 
@@ -166,11 +257,13 @@ Takım Seç
 
 
 
+
 <footer>
 
 <p>
-© 2026 NovaSpor | Tüm hakları saklıdır.
+© 2026 NovaSpor
 </p>
+
 
 </footer>
 
@@ -178,57 +271,27 @@ Takım Seç
 
 
 
-<script src="js/favorites.js"></script>
 
-<script src="js/darkmode.js"></script>
 <script>
+
+
 const menuBtn = document.getElementById("menuBtn");
-const nav = document.querySelector("nav");
 
-menuBtn.addEventListener("click", function () {
-    nav.classList.toggle("show");
+const menu = document.getElementById("menu");
+
+
+menuBtn.addEventListener("click",()=>{
+
+menu.classList.toggle("active");
+
 });
+
+
 </script>
 
-<!-- Çerez Bildirimi -->
-<div id="cookieBox" class="cookie-box">
-
-<p>
-🍪 NovaSpor, daha iyi bir deneyim sunmak için çerezleri kullanır.
-</p>
-
-<div class="cookie-buttons">
-
-<button onclick="acceptCookies()">
-✅ Kabul Et
-</button>
-
-<a href="cookie.html">
-📄 Çerez Politikası
-</a>
-
-</div>
-
-</div>
-
-<script>
-
-function acceptCookies(){
-
-localStorage.setItem("cookiesAccepted","true");
-
-document.getElementById("cookieBox").style.display="none";
-
-}
 
 
-if(localStorage.getItem("cookiesAccepted")){
 
-document.getElementById("cookieBox").style.display="none";
-
-}
-
-</script>
 </body>
 
 </html>

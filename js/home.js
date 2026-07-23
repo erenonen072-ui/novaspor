@@ -450,3 +450,45 @@ if(menuBtn && mobileMenu){
     });
 
 }
+// 📱 ANA EKRANA EKLE
+
+let installPrompt;
+
+
+window.addEventListener(
+"beforeinstallprompt",
+function(e){
+
+e.preventDefault();
+
+installPrompt = e;
+
+
+if(!localStorage.getItem("install")){
+
+
+let cevap = confirm(
+"⚽ NovaSpor'u ana ekrana eklemek ister misin?"
+);
+
+
+localStorage.setItem(
+"install",
+"true"
+);
+
+
+
+if(cevap){
+
+
+installPrompt.prompt();
+
+
+}
+
+
+}
+
+
+});

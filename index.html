@@ -19,38 +19,68 @@
 
 <header>
 
-    <div class="logo">
-        🟡⚽ <strong>NovaSpor</strong>
-    </div>
+
+<div class="logo">
+
+🟡⚽ <strong>NovaSpor</strong>
+
+</div>
 
 
-    <nav>
 
-        <a href="index.html">🏠 Ana Sayfa</a>
-
-        <a href="pages/live.html">🔴 Canlı</a>
-
-        <a href="pages/standings.html">🏆 Puan Durumu</a>
-
-        <a href="pages/fixtures.html">📅 Fikstür</a>
-
-        <a href="pages/news.html">📰 Haberler</a>
-
-        <a href="pages/favorites.html">⭐ Favoriler</a>
-
-    </nav>
+<nav>
 
 
-    <button class="btn btn-dark" id="darkMode">
-        🌙
-    </button>
+<a href="index.html">
+🏠 Ana Sayfa
+</a>
+
+
+<a href="pages/live.html">
+🔴 Canlı
+</a>
+
+
+<a href="pages/standings.html">
+🏆 Puan Durumu
+</a>
+
+
+<a href="pages/fixtures.html">
+📅 Fikstür
+</a>
+
+
+<a href="pages/news.html">
+📰 Haberler
+</a>
+
+
+<a href="pages/favorites.html">
+⭐ Favoriler
+</a>
+
+
+</nav>
+
+
+
+<button class="btn btn-dark" id="darkMode">
+
+🌙
+
+</button>
+
 
 
 </header>
 
 
 
+
+
 <main>
+
 
 
 <section class="hero">
@@ -61,28 +91,41 @@
 </h1>
 
 
+
 <p>
-Futbol dünyasındaki son gelişmeler,
-canlı skorlar ve haberler burada.
+
+Canlı skorlar, puan durumları,
+fikstürler ve futbol haberleri.
+
 </p>
+
 
 
 
 <div class="search-box">
 
-<input 
-type="text" 
+
+<input
+
+type="text"
+
 id="search"
+
 placeholder="Takım veya haber ara..."
+
 >
 
 
 <button>
+
 🔍 Ara
+
 </button>
 
 
+
 </div>
+
 
 
 </section>
@@ -91,74 +134,115 @@ placeholder="Takım veya haber ara..."
 
 <section class="news-ticker">
 
-    <span>
-        🔴 SON DAKİKA
-    </span>
 
-    <div class="news-text">
-        Galatasaray transfer çalışmalarına başladı |
-        Fenerbahçe yeni sezon hazırlıklarını sürdürüyor |
-        Süper Lig'de heyecan devam ediyor
-    </div>
+<span>
+🔴 SON DAKİKA
+</span>
+
+
+
+<div class="news-text">
+
+Galatasaray yeni transfer çalışmalarına başladı |
+Fenerbahçe hazırlıklarını sürdürüyor |
+Süper Lig'de heyecan devam ediyor
+
+</div>
+
+
 
 </section>
 
 
 
+
+
 <!-- ANA KARTLAR -->
+
 
 <section class="home-grid">
 
 
+
+
+
 <!-- CANLI MAÇLAR -->
+
 
 <div class="card">
 
-    <div class="card-title">
-        🔴 Canlı Maçlar
-    </div>
+
+<div class="card-title">
+
+🔴 Canlı Maçlar
+
+</div>
 
 
-    <div id="liveMatches">
 
-        <div class="loading">
-            Maçlar yükleniyor...
-        </div>
+<div id="liveMatches">
 
-    </div>
+
+<div class="loading">
+
+Maçlar yükleniyor...
+
+</div>
 
 
 </div>
+
+
+
+</div>
+
+
+
 
 
 
 
 <!-- PUAN DURUMU -->
 
+
 <div class="card">
 
-    <div class="card-title">
 
-        🏆 Puan Durumu
-
-        <a href="pages/standings.html">
-            Gör
-        </a>
-
-    </div>
+<div class="card-title">
 
 
-    <div id="standings">
-
-        <div class="loading">
-            Puan durumu yükleniyor...
-        </div>
+🏆 Puan Durumu
 
 
-    </div>
+
+<a href="pages/standings.html">
+
+Gör
+
+</a>
 
 
 </div>
+
+
+
+<div id="standings">
+
+
+<div class="loading">
+
+Puan durumu yükleniyor...
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
 
 
 
@@ -166,38 +250,52 @@ placeholder="Takım veya haber ara..."
 
 <!-- FAVORİ TAKIM -->
 
+
 <div class="card favorite-box">
 
 
-    <div class="card-title">
 
-        ⭐ Favori Takım
+<div class="card-title">
 
-    </div>
+⭐ Favori Takım
 
-
-
-    <img 
-    id="favoriteLogo"
-    src="https://via.placeholder.com/90"
-    alt="Takım">
-
-
-    <h3 id="favoriteName">
-        Takım seçilmedi
-    </h3>
+</div>
 
 
 
-    <button class="btn btn-yellow">
 
-        Takım Seç
+<img
 
-    </button>
+id="favoriteLogo"
+
+src="https://via.placeholder.com/90"
+
+alt="Takım"
+
+>
+
+
+
+
+<h3 id="favoriteName">
+
+Takım seçilmedi
+
+</h3>
+
+
+
+
+<button class="btn btn-yellow">
+
+Takım Seç
+
+</button>
 
 
 
 </div>
+
 
 
 
@@ -206,7 +304,9 @@ placeholder="Takım veya haber ara..."
 
 <!-- YAKLAŞAN MAÇLAR -->
 
+
 <div class="card">
+
 
 
 <div class="card-title">
@@ -214,6 +314,7 @@ placeholder="Takım veya haber ara..."
 📅 Yaklaşan Maçlar
 
 </div>
+
 
 
 
@@ -235,78 +336,118 @@ Yaklaşan maçlar yükleniyor...
 
 
 
+
+
 </section>
 
 <!-- HABERLER -->
 
 <section class="card">
 
+
 <div class="card-title">
 
 📰 Son Haberler
 
+
 <a href="pages/news.html">
-    Tümü
+
+Tümü
+
 </a>
 
+
 </div>
+
+
 
 
 
 <div id="newsList">
 
 
+
+
+
 <div class="news-card">
 
 
-<img 
+<img
+
 src="https://via.placeholder.com/120x80"
-alt="haber">
+
+alt="haber"
+
+>
+
 
 
 <div>
 
+
 <h3>
-NovaSpor haberleri burada yayınlanacak
+
+NovaSpor Güncel Haberleri
+
 </h3>
 
 
 <p>
-Güncel futbol gelişmeleri ve transfer haberleri.
+
+Futbol dünyasından son gelişmeler.
+
 </p>
 
 
+
 </div>
 
 
 </div>
+
+
+
+
 
 
 
 <div class="news-card">
 
 
-<img 
+<img
+
 src="https://via.placeholder.com/120x80"
-alt="haber">
+
+alt="haber"
+
+>
+
 
 
 <div>
 
+
 <h3>
+
 Süper Lig'de yeni sezon heyecanı
+
 </h3>
 
 
 <p>
-Takımlardan son gelişmeler.
+
+Takımlardan son haberler.
+
 </p>
 
 
+
 </div>
 
 
 </div>
+
+
 
 
 
@@ -317,7 +458,11 @@ Takımlardan son gelişmeler.
 
 
 
+
+
 </main>
+
+
 
 
 
@@ -329,17 +474,25 @@ Takımlardan son gelişmeler.
 <footer>
 
 
+
 <div class="footer-grid">
+
 
 
 <div>
 
+
 <h3>
+
 ⚽ NovaSpor
+
 </h3>
 
+
 <p>
+
 Futbolun yeni adresi.
+
 </p>
 
 
@@ -347,52 +500,85 @@ Futbolun yeni adresi.
 
 
 
+
+
+
 <div>
 
+
 <h3>
+
 Sayfalar
+
 </h3>
+
 
 <a href="pages/live.html">
+
 Canlı
+
 </a>
+
 <br>
+
 
 <a href="pages/news.html">
+
 Haberler
+
 </a>
+
 <br>
 
+
 <a href="pages/favorites.html">
+
 Favoriler
+
 </a>
 
 
 </div>
+
+
 
 
 
 
 <div>
 
+
 <h3>
+
 Bilgi
+
 </h3>
 
+
 <a href="pages/about.html">
+
 Hakkımızda
+
 </a>
 
+
 <br>
+
 
 <a href="pages/privacy.html">
+
 Gizlilik
+
 </a>
+
 
 <br>
 
-<a href="pages/cookies.html">
+
+<a href="pages/cookie.html">
+
 Çerez Politikası
+
 </a>
 
 
@@ -400,15 +586,19 @@ Gizlilik
 
 
 
+
+
 </div>
+
 
 
 
 <p style="text-align:center;margin-top:25px">
 
-© 2026 NovaSpor - Tüm hakları saklıdır.
+© 2026 NovaSpor
 
 </p>
+
 
 
 </footer>
@@ -417,8 +607,9 @@ Gizlilik
 
 
 
-<!-- ÇEREZ BİLDİRİMİ -->
 
+
+<!-- ÇEREZ -->
 
 <div class="cookie-box" id="cookieBox">
 
@@ -445,6 +636,7 @@ Kabul Et
 
 
 <script src="js/home.js"></script>
+
 
 
 </body>

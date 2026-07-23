@@ -375,3 +375,63 @@ cookieBox.style.display="none";
 };
 
 }
+// 🔍 ARAMA SİSTEMİ
+
+
+const searchInput =
+document.getElementById("searchInput");
+
+
+
+if(searchInput){
+
+
+searchInput.addEventListener(
+"input",
+()=>{
+
+
+let value =
+searchInput.value.toLowerCase();
+
+
+
+const items =
+document.querySelectorAll(
+".box, .news-item"
+);
+
+
+
+items.forEach(item=>{
+
+
+let text =
+item.innerText.toLowerCase();
+
+
+
+if(text.includes(value)){
+
+
+item.style.display="block";
+
+
+}
+
+else{
+
+
+item.style.display="none";
+
+
+}
+
+
+});
+
+
+});
+
+
+}

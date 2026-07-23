@@ -557,3 +557,70 @@ background:#222;
 color:white;
 
 }
+.cookie-box{
+
+position:fixed;
+
+bottom:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+background:#111;
+
+color:white;
+
+padding:15px 20px;
+
+border-radius:15px;
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+z-index:9999;
+
+box-shadow:0 5px 20px #000;
+
+}
+
+
+
+.cookie-box button{
+
+background:#ffd600;
+
+color:#111;
+
+padding:10px 15px;
+
+border-radius:10px;
+
+border:none;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+
+
+#cookieClose{
+
+background:#333;
+
+color:white;
+
+}
+
+
+
+body.dark .cookie-box{
+
+background:#222;
+
+}

@@ -437,30 +437,16 @@ item.style.display="none";
 }
 // 📱 MOBİL MENÜ
 
-
-const menuBtn =
-document.getElementById("menuBtn");
-
-
-const mobileMenu =
-document.getElementById("mobileMenu");
-
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
 
 
 if(menuBtn && mobileMenu){
 
+    menuBtn.addEventListener("click", function(){
 
-menuBtn.addEventListener(
-"click",
-()=>{
+        mobileMenu.classList.toggle("active");
 
-
-mobileMenu.classList.toggle(
-"active"
-);
-
-
-});
-
+    });
 
 }

@@ -582,3 +582,131 @@ font-size:18px;
 }
 
 }
+/* ===========================
+   HERO BANNER V2
+=========================== */
+
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.hero-left{
+    flex:1;
+}
+
+.hero-left h2{
+    font-size:34px;
+    font-weight:800;
+    line-height:1.2;
+    margin-bottom:15px;
+    color:#111;
+}
+
+.hero-left p{
+    color:#444;
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.news-btn,
+.live-btn{
+
+    display:inline-block;
+
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.news-btn{
+
+    background:#111;
+
+    color:#fff;
+
+}
+
+.news-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.live-btn{
+
+    background:#d50000;
+
+    color:#fff;
+
+}
+
+.live-btn:hover{
+
+    background:#b80000;
+
+    transform:translateY(-3px);
+
+}
+
+.hero-right{
+
+    width:200px;
+
+}
+
+.hero-right img{
+
+    width:100%;
+
+    border-radius:22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+}
+
+@media(max-width:768px){
+
+.hero-content{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-right{
+
+width:140px;
+
+}
+
+.hero-left h2{
+
+font-size:26px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+}

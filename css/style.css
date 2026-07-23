@@ -410,3 +410,28 @@ body.dark footer{
 background:#000;
 
 }
+.standing-row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:10px;
+
+margin:5px 0;
+
+background:#f5f5f5;
+
+border-radius:10px;
+
+}
+
+
+
+body.dark .standing-row{
+
+background:#333;
+
+color:white;
+
+}

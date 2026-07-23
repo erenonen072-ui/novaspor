@@ -18,6 +18,7 @@
 
 <header>
 
+
 <div class="topbar">
 
 <h1>🟡 NOVASPOR</h1>
@@ -52,6 +53,7 @@
 
 </nav>
 
+
 </header>
 
 
@@ -76,6 +78,7 @@ Canlı skorlar • Fikstür • Puan Durumu • Haberler
 
 
 
+
 <section class="card">
 
 <h3>🔴 Canlı Maçlar</h3>
@@ -83,18 +86,19 @@ Canlı skorlar • Fikstür • Puan Durumu • Haberler
 
 <div id="live">
 
-⚽ Şu anda canlı maç bulunmuyor.
+⚽ Canlı maçlar yükleniyor...
 
 </div>
 
 
 <a href="live.html">
+
 Canlı Maçlar →
+
 </a>
 
 
 </section>
-
 
 
 
@@ -115,7 +119,9 @@ Canlı Maçlar →
 
 
 <a href="favorites.html">
+
 Takım Seç →
+
 </a>
 
 
@@ -133,54 +139,21 @@ Takım Seç →
 <h3>🏆 Puan Durumu</h3>
 
 
-<table>
+<div id="homeStandings">
 
-<tr>
+🏆 Puan durumu yükleniyor...
 
-<th>#</th>
-<th>Takım</th>
-<th>P</th>
-
-</tr>
-
-
-<tr>
-
-<td>1</td>
-<td>Galatasaray</td>
-<td>82</td>
-
-</tr>
-
-
-<tr>
-
-<td>2</td>
-<td>Fenerbahçe</td>
-<td>79</td>
-
-</tr>
-
-
-<tr>
-
-<td>3</td>
-<td>Beşiktaş</td>
-<td>65</td>
-
-</tr>
-
-
-</table>
+</div>
 
 
 <a href="standings.html">
+
 Tüm Puan Durumu →
+
 </a>
 
 
 </section>
-
 
 
 
@@ -194,62 +167,47 @@ Tüm Puan Durumu →
 <h3>📅 Yaklaşan Maçlar</h3>
 
 
-<div class="match">
+<div id="homeFixtures">
 
-<strong>
-Galatasaray - Samsunspor
-</strong>
-
-<span>
-26 Temmuz • 20:00
-</span>
+📅 Fikstür yükleniyor...
 
 </div>
-
-
-
-
-<div class="match">
-
-<strong>
-Fenerbahçe - Kasımpaşa
-</strong>
-
-<span>
-27 Temmuz • 19:00
-</span>
-
-</div>
-
 
 
 <a href="fixtures.html">
+
 Tüm Fikstür →
+
 </a>
 
 
 </section>
+
+
+
+
+
+
+
+
 <section class="card">
 
+
 <a href="news.html">
+
 📰 Haberleri Gör →
+
 </a>
 
+
 </section>
-
-
-
-
-
-
-
-
 
 
 
 
 
 </main>
+
 
 
 
@@ -271,6 +229,7 @@ Tüm Fikstür →
 
 
 <script>
+
 
 const menuBtn = document.getElementById("menuBtn");
 
@@ -301,6 +260,8 @@ overlay.classList.remove("active");
 </script>
 
 
+
+<script src="js/home.js"></script>
 
 
 </body>

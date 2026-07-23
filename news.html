@@ -18,22 +18,12 @@
 
 <header>
 
-
-<div class="topbar">
-
-<h1>🟡 NOVASPOR</h1>
-
-<button id="menuBtn">☰</button>
-
+<div class="logo">
+⚽ <b>NovaSpor</b>
 </div>
 
 
-<div id="overlay"></div>
-
-
-
-<nav id="menu">
-
+<nav>
 
 <a href="index.html">🏠 Ana Sayfa</a>
 
@@ -43,16 +33,11 @@
 
 <a href="fixtures.html">📅 Fikstür</a>
 
-<a href="favorites.html">⭐ Favoriler</a>
-
 <a href="news.html">📰 Haberler</a>
 
+<a href="favorites.html">⭐ Favoriler</a>
+
 <a href="about.html">ℹ️ Hakkımızda</a>
-
-<a href="contact.html">📞 İletişim</a>
-
-<a href="privacy.html">🔒 Gizlilik</a>
-
 
 </nav>
 
@@ -66,14 +51,18 @@
 <main>
 
 
+<section class="welcome">
 
-<section class="hero">
 
-<h2>📰 Haberler</h2>
+<h1>
+📰 NovaSpor Haberler
+</h1>
+
 
 <p>
-NovaSpor güncel futbol haberleri
+Futbol dünyasından son gelişmeler ve transfer haberleri.
 </p>
+
 
 </section>
 
@@ -82,28 +71,89 @@ NovaSpor güncel futbol haberleri
 
 
 
-<section class="card">
+
+<section class="cards">
 
 
-<h3>📰 Haberler</h3>
+
+<a class="box news-link"
+href="https://sites.google.com/view/novassporr/haberler"
+target="_blank">
+
+
+<h2>
+🟡 Transfer Haberleri
+</h2>
 
 
 <p>
-Transfer haberleri ve futbol dünyasından gelişmeler için:
+Galatasaray, Fenerbahçe, Beşiktaş ve tüm takımlardan son haberler.
 </p>
 
 
-<a href="https://sites.google.com/view/novassporr/haberler" target="_blank">
+<b>
+Habere Git →
+</b>
 
-📰 Haberleri Aç →
 
 </a>
 
 
+
+
+
+
+<a class="box news-link"
+href="https://sites.google.com/view/novassporr/haberler"
+target="_blank">
+
+
+<h2>
+⚽ Futbol Gündemi
+</h2>
+
+
+<p>
+Maçlar, açıklamalar ve futbol dünyasından gelişmeler.
+</p>
+
+
+<b>
+Habere Git →
+</b>
+
+
+</a>
+
+
+
+
+
+<a class="box news-link"
+href="https://sites.google.com/view/novassporr/haberler"
+target="_blank">
+
+
+<h2>
+🔥 Son Dakika
+</h2>
+
+
+<p>
+Günün önemli spor haberlerini kaçırma.
+</p>
+
+
+<b>
+Habere Git →
+</b>
+
+
+</a>
+
+
+
 </section>
-
-
-
 
 
 </main>
@@ -112,53 +162,13 @@ Transfer haberleri ve futbol dünyasından gelişmeler için:
 
 
 
-
-
 <footer>
 
 <p>
-© 2026 NovaSpor
+© 2026 NovaSpor | Futbol Dünyası
 </p>
 
 </footer>
-
-
-
-
-
-
-<script>
-
-
-const menuBtn = document.getElementById("menuBtn");
-
-const menu = document.getElementById("menu");
-
-const overlay = document.getElementById("overlay");
-
-
-
-menuBtn.onclick = () => {
-
-menu.classList.add("active");
-
-overlay.classList.add("active");
-
-};
-
-
-
-overlay.onclick = () => {
-
-menu.classList.remove("active");
-
-overlay.classList.remove("active");
-
-};
-
-
-</script>
-
 
 
 

@@ -8,34 +8,47 @@ async function loadHomeData() {
 
 
 
-    // PUAN DURUMU
+    // 🏆 PUAN DURUMU
 
     try {
 
-        const standingsResponse = await fetch("/api/standings");
+        const response = await fetch("/api/standings");
 
-        const standingsData = await standingsResponse.json();
+        const data = await response.json();
 
 
-        if (standingsData.response && standingsData.response.length > 0) {
+
+        if (
+            data.response &&
+            data.response.length > 0
+        ) {
 
 
             let html = "";
 
+            const teams =
+            data.response[0]
+            .league
+            .standings[0]
+            .slice(0,5);
 
-            standingsData.response[0].league.standings[0]
-            .slice(0,5)
-            .forEach((team,index)=>{
+
+
+            teams.forEach((team,index)=>{
 
 
                 html += `
 
                 <div class="team-row">
 
-                ${index+1}. 
-                ${team.team.name}
+                <span>
+                ${index + 1}. ${team.team.name}
+                </span>
 
-                <b>${team.points} P</b>
+
+                <b>
+                ${team.points} P
+                </b>
 
                 </div>
 
@@ -50,16 +63,24 @@ async function loadHomeData() {
 
         } else {
 
+
             standingsBox.innerHTML =
             "🏆 Puan durumu bulunamadı.";
+
 
         }
 
 
-    } catch(error){
+
+    } catch(error) {
+
+
+        console.log(error);
+
 
         standingsBox.innerHTML =
         "❌ Puan durumu yüklenemedi.";
+
 
     }
 
@@ -69,48 +90,87 @@ async function loadHomeData() {
 
 
 
-    // FİKSTÜR
 
+
+    // 📅 YAKLAŞAN MAÇLAR
 
     try {
 
 
-        const fixturesResponse =
+        const response =
         await fetch("/api/fixtures");
 
 
-        const fixturesData =
-        await fixturesResponse.json();
+        const data =
+        await response.json();
 
 
 
-        if(fixturesData.response &&
-        fixturesData.response.length > 0){
+        if (
+            data.response &&
+            data.response.length > 0
+        ){
 
 
-            let html="";
+            let html = "";
 
 
 
-            fixturesData.response
-            .slice(0,3)
-            .forEach(match=>{
+            const upcoming =
+            data.response
+            .filter(match => {
+
+                return new Date(match.fixture.date)
+                >= new Date();
+
+            })
+            .slice(0,3);
+
+
+
+            if(upcoming.length === 0){
+
+
+                fixturesBox.innerHTML =
+                "📅 Yaklaşan maç bulunamadı.";
+
+                return;
+
+
+            }
+
+
+
+
+            upcoming.forEach(match=>{
+
+
+                const date =
+                new Date(match.fixture.date)
+                .toLocaleDateString("tr-TR");
+
 
 
                 html += `
 
                 <div class="match">
 
-                ⚽ ${match.teams.home.name}
+                <strong>
+
+                ${match.teams.home.name}
 
                 -
-
+                
                 ${match.teams.away.name}
+
+                </strong>
+
 
                 <br>
 
-                📅 ${new Date(match.fixture.date)
-                .toLocaleDateString("tr-TR")}
+
+                📅 ${date}
+
 
                 </div>
 
@@ -124,18 +184,22 @@ async function loadHomeData() {
             fixturesBox.innerHTML = html;
 
 
-        }else{
+        }
+        else{
 
 
             fixturesBox.innerHTML =
-            "📅 Maç bulunamadı.";
+            "📅 Fikstür bulunamadı.";
 
 
         }
 
 
 
-    }catch(error){
+    } catch(error){
+
+
+        console.log(error);
 
 
         fixturesBox.innerHTML =
@@ -143,6 +207,7 @@ async function loadHomeData() {
 
 
     }
+
 
 
 }

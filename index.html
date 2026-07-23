@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NovaSpor - Futbol Dünyası</title>
@@ -19,58 +18,28 @@
 
 <header>
 
-
 <div class="logo">
-
-🟡⚽ <strong>NovaSpor</strong>
-
+⚽ <b>NovaSpor</b>
 </div>
-
 
 
 <nav>
 
+<a href="index.html">🏠 Ana Sayfa</a>
 
-<a href="index.html">
-🏠 Ana Sayfa
-</a>
+<a href="pages/live.html">🔴 Canlı</a>
 
+<a href="pages/standings.html">🏆 Puan Durumu</a>
 
-<a href="pages/live.html">
-🔴 Canlı
-</a>
+<a href="pages/fixtures.html">📅 Fikstür</a>
 
+<a href="pages/news.html">📰 Haberler</a>
 
-<a href="pages/standings.html">
-🏆 Puan Durumu
-</a>
+<a href="pages/favorites.html">⭐ Favoriler</a>
 
-
-<a href="pages/fixtures.html">
-📅 Fikstür
-</a>
-
-
-<a href="pages/news.html">
-📰 Haberler
-</a>
-
-
-<a href="pages/favorites.html">
-⭐ Favoriler
-</a>
-
+<a href="pages/about.html">ℹ️ Hakkımızda</a>
 
 </nav>
-
-
-
-<button class="btn btn-dark" id="darkMode">
-
-🌙
-
-</button>
-
 
 
 </header>
@@ -78,121 +47,38 @@
 
 
 
-
 <main>
 
 
-
-<section class="hero">
-
+<section class="welcome">
 
 <h1>
 ⚽ NovaSpor'a Hoş Geldin
 </h1>
 
-
-
 <p>
-
-Canlı skorlar, puan durumları,
-fikstürler ve futbol haberleri.
-
+Futbol haberleri, canlı skorlar ve puan durumları.
 </p>
 
-
-
-
-<div class="search-box">
-
-
-<input
-
-type="text"
-
-id="search"
-
-placeholder="Takım veya haber ara..."
-
->
-
-
-<button>
-
-🔍 Ara
-
-</button>
-
-
-
-</div>
-
-
-
-</section>
-
-<!-- SON DAKİKA -->
-
-<section class="news-ticker">
-
-
-<span>
-🔴 SON DAKİKA
-</span>
-
-
-
-<div class="news-text">
-
-Galatasaray yeni transfer çalışmalarına başladı |
-Fenerbahçe hazırlıklarını sürdürüyor |
-Süper Lig'de heyecan devam ediyor
-
-</div>
-
-
-
 </section>
 
 
 
 
 
-<!-- ANA KARTLAR -->
-
-
-<section class="home-grid">
+<section class="cards">
 
 
 
+<div class="box">
 
-
-<!-- CANLI MAÇLAR -->
-
-
-<div class="card">
-
-
-<div class="card-title">
-
-🔴 Canlı Maçlar
-
-</div>
-
-
+<h2>🔴 Canlı Maçlar</h2>
 
 <div id="liveMatches">
 
-
-<div class="loading">
-
-Maçlar yükleniyor...
+Yükleniyor...
 
 </div>
-
-
-</div>
-
-
 
 </div>
 
@@ -200,45 +86,15 @@ Maçlar yükleniyor...
 
 
 
+<div class="box">
 
-
-<!-- PUAN DURUMU -->
-
-
-<div class="card">
-
-
-<div class="card-title">
-
-
-🏆 Puan Durumu
-
-
-
-<a href="pages/standings.html">
-
-Gör
-
-</a>
-
-
-</div>
-
-
+<h2>🏆 Puan Durumu</h2>
 
 <div id="standings">
 
-
-<div class="loading">
-
-Puan durumu yükleniyor...
+Yükleniyor...
 
 </div>
-
-
-</div>
-
-
 
 </div>
 
@@ -247,216 +103,73 @@ Puan durumu yükleniyor...
 
 
 
+<div class="box">
 
-<!-- FAVORİ TAKIM -->
-
-
-<div class="card favorite-box">
+<h2>⭐ Favori Takım</h2>
 
 
-
-<div class="card-title">
-
-⭐ Favori Takım
-
-</div>
-
-
-
-
-<img
-
-id="favoriteLogo"
-
-src="https://via.placeholder.com/90"
-
-alt="Takım"
-
->
-
-
+<img id="favoriteLogo"
+src="https://via.placeholder.com/80">
 
 
 <h3 id="favoriteName">
-
 Takım seçilmedi
-
 </h3>
 
 
-
-
-<button class="btn btn-yellow">
-
+<button>
 Takım Seç
-
 </button>
 
 
-
 </div>
 
 
 
 
 
+<div class="box">
+
+<h2>📅 Yaklaşan Maçlar</h2>
 
 
-<!-- YAKLAŞAN MAÇLAR -->
+<div id="fixtures">
 
-
-<div class="card">
-
-
-
-<div class="card-title">
-
-📅 Yaklaşan Maçlar
-
-</div>
-
-
-
-
-<div id="upcomingMatches">
-
-
-<div class="loading">
-
-Yaklaşan maçlar yükleniyor...
+Yükleniyor...
 
 </div>
 
 
 </div>
-
-
-
-</div>
-
-
 
 
 
 </section>
 
-<!-- HABERLER -->
-
-<section class="card">
-
-
-<div class="card-title">
-
-📰 Son Haberler
-
-
-<a href="pages/news.html">
-
-Tümü
-
-</a>
-
-
-</div>
 
 
 
 
-
-<div id="newsList">
-
+<section class="news">
 
 
+<h2>📰 Son Haberler</h2>
 
 
-<div class="news-card">
-
-
-<img
-
-src="https://via.placeholder.com/120x80"
-
-alt="haber"
-
->
-
-
-
-<div>
-
+<div class="news-item">
 
 <h3>
-
-NovaSpor Güncel Haberleri
-
+Spor dünyasından son gelişmeler
 </h3>
 
-
 <p>
-
-Futbol dünyasından son gelişmeler.
-
+NovaSpor haberleri burada yayınlanacak.
 </p>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="news-card">
-
-
-<img
-
-src="https://via.placeholder.com/120x80"
-
-alt="haber"
-
->
-
-
-
-<div>
-
-
-<h3>
-
-Süper Lig'de yeni sezon heyecanı
-
-</h3>
-
-
-<p>
-
-Takımlardan son haberler.
-
-</p>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
 
 </div>
 
 
 </section>
-
-
 
 
 
@@ -467,138 +180,11 @@ Takımlardan son haberler.
 
 
 
-
-<!-- FOOTER -->
-
-
 <footer>
 
-
-
-<div class="footer-grid">
-
-
-
-<div>
-
-
-<h3>
-
-⚽ NovaSpor
-
-</h3>
-
-
 <p>
-
-Futbolun yeni adresi.
-
+© 2026 NovaSpor | Futbol Dünyası
 </p>
-
-
-</div>
-
-
-
-
-
-
-<div>
-
-
-<h3>
-
-Sayfalar
-
-</h3>
-
-
-<a href="pages/live.html">
-
-Canlı
-
-</a>
-
-<br>
-
-
-<a href="pages/news.html">
-
-Haberler
-
-</a>
-
-<br>
-
-
-<a href="pages/favorites.html">
-
-Favoriler
-
-</a>
-
-
-</div>
-
-
-
-
-
-
-<div>
-
-
-<h3>
-
-Bilgi
-
-</h3>
-
-
-<a href="pages/about.html">
-
-Hakkımızda
-
-</a>
-
-
-<br>
-
-
-<a href="pages/privacy.html">
-
-Gizlilik
-
-</a>
-
-
-<br>
-
-
-<a href="pages/cookie.html">
-
-Çerez Politikası
-
-</a>
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-<p style="text-align:center;margin-top:25px">
-
-© 2026 NovaSpor
-
-</p>
-
 
 
 </footer>
@@ -606,37 +192,7 @@ Gizlilik
 
 
 
-
-
-
-<!-- ÇEREZ -->
-
-<div class="cookie-box" id="cookieBox">
-
-
-<span>
-
-NovaSpor deneyimini geliştirmek için çerezleri kullanıyoruz.
-
-</span>
-
-
-<button id="cookieAccept">
-
-Kabul Et
-
-</button>
-
-
-</div>
-
-
-
-
-
-
 <script src="js/home.js"></script>
-
 
 
 </body>

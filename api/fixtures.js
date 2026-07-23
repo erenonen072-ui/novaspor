@@ -6,11 +6,14 @@ export default async function handler(req, res) {
 
         let season;
 
+
+        // Yeni sezon otomatik
         if (now.getMonth() + 1 >= 8) {
             season = now.getFullYear();
         } else {
             season = now.getFullYear() - 1;
         }
+
 
 
         async function getFixtures(year) {
@@ -34,10 +37,23 @@ export default async function handler(req, res) {
 
 
 
-        // Yeni sezonda veri yoksa önceki sezona bak
+        // Veri yoksa önceki sezon
         if (!data.response || data.response.length === 0) {
 
             data = await getFixtures(season - 1);
+
+        }
+
+
+
+        // Sadece gelecek maçlar
+        if (data.response) {
+
+            data.response = data.response.filter(match => {
+
+                return new Date(match.fixture.date) >= new Date();
+
+            });
 
         }
 
@@ -47,11 +63,13 @@ export default async function handler(req, res) {
 
 
 
-    } catch (error) {
+    } catch(error) {
 
 
         res.status(500).json({
+
             error: error.message
+
         });
 
 

@@ -134,7 +134,99 @@ savedLogo;
 
 
 
+// 🏆 PUAN DURUMU
 
+const standingsBox =
+document.getElementById("standings");
+
+
+async function loadHomeStandings(){
+
+
+if(!standingsBox) return;
+
+
+try{
+
+
+const response =
+await fetch("/api/standings");
+
+
+const data =
+await response.json();
+
+
+
+if(
+!data.response ||
+!data.response[0] ||
+!data.response[0].league
+){
+
+standingsBox.innerHTML =
+"⚠️ Puan durumu bulunamadı";
+
+return;
+
+}
+
+
+
+const table =
+data.response[0].league.standings[0];
+
+
+
+standingsBox.innerHTML = "";
+
+
+
+table.slice(0,5).forEach(team=>{
+
+
+standingsBox.innerHTML += `
+
+<div class="standing-row">
+
+<span>
+${team.rank}. ${team.team.name}
+</span>
+
+
+<b>
+${team.points} P
+</b>
+
+</div>
+
+`;
+
+
+
+});
+
+
+}
+
+catch(error){
+
+
+standingsBox.innerHTML =
+"⚠️ Puan durumu yüklenemedi";
+
+
+console.log(error);
+
+
+}
+
+
+}
+
+
+
+loadHomeStandings();
 // 🔴 CANLI MAÇ
 
 

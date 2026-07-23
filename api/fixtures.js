@@ -2,12 +2,13 @@ export default async function handler(req, res) {
 
     try {
 
+
         const now = new Date();
 
         let season;
 
 
-        // Yeni sezon otomatik
+        // Otomatik sezon
         if (now.getMonth() + 1 >= 8) {
             season = now.getFullYear();
         } else {
@@ -18,16 +19,22 @@ export default async function handler(req, res) {
 
         async function getFixtures(year) {
 
+
             const response = await fetch(
+
                 `https://v3.football.api-sports.io/fixtures?league=203&season=${year}`,
+
                 {
                     headers: {
                         "x-apisports-key": process.env.API_KEY
                     }
                 }
+
             );
 
+
             return await response.json();
+
 
         }
 
@@ -46,7 +53,7 @@ export default async function handler(req, res) {
 
 
 
-        // Sadece gelecek maçlar
+        // Gelecek maçları bırak
         if (data.response) {
 
             data.response = data.response.filter(match => {
@@ -54,6 +61,7 @@ export default async function handler(req, res) {
                 return new Date(match.fixture.date) >= new Date();
 
             });
+
 
         }
 

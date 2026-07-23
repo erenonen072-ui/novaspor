@@ -603,3 +603,34 @@ border-radius:15px;
 font-weight:bold;
 
 }
+.logo-area{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+
+.logo-area img{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+
+.logo-area h1{
+
+margin:0;
+
+font-size:22px;
+
+}

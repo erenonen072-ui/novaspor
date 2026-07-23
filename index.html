@@ -12,7 +12,76 @@
 
 </head>
 
+<div id="cookieBox">
 
+<div class="cookie-icon">
+🍪
+</div>
+
+
+<div class="cookie-text">
+
+<h3>Çerez Kullanımı</h3>
+
+<p>
+NovaSpor deneyimini geliştirmek, site performansını artırmak ve daha iyi hizmet sunmak için çerezleri kullanıyoruz.
+</p>
+
+</div>
+
+
+<div class="cookie-buttons">
+
+<button onclick="acceptCookies()">
+Kabul Et
+</button>
+
+
+<button onclick="closeCookies()">
+Sonra
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+function acceptCookies(){
+
+localStorage.setItem(
+"novaCookies",
+"accepted"
+);
+
+
+document.getElementById("cookieBox")
+.style.display="none";
+
+}
+
+
+
+function closeCookies(){
+
+document.getElementById("cookieBox")
+.style.display="none";
+
+}
+
+
+
+if(localStorage.getItem("novaCookies")){
+
+document.getElementById("cookieBox")
+.style.display="none";
+
+}
+
+</script>
 <body>
 
 

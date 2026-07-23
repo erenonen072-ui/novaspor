@@ -4,23 +4,20 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NovaSpor</title>
 
 <link rel="stylesheet" href="css/style.css">
 
-
-<!-- OneSignal Bildirim -->
-
+<!-- OneSignal -->
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 
 <script>
 
 window.OneSignalDeferred = window.OneSignalDeferred || [];
 
-OneSignalDeferred.push(async function(OneSignal) {
+OneSignalDeferred.push(async function (OneSignal) {
 
     await OneSignal.init({
 
@@ -32,128 +29,77 @@ OneSignalDeferred.push(async function(OneSignal) {
 
 </script>
 
-
 </head>
 
-
 <body>
-
 
 <!-- ÇEREZ -->
 
 <div id="cookieBox">
 
-<div class="cookie-icon">
-🍪
-</div>
-
+<div class="cookie-icon">🍪</div>
 
 <div class="cookie-text">
 
 <h3>Çerez Kullanımı</h3>
 
 <p>
-NovaSpor deneyimini geliştirmek, site performansını artırmak ve daha iyi hizmet sunmak için çerezleri kullanıyoruz.
+
+NovaSpor deneyimini geliştirmek için çerezleri kullanıyoruz.
+
 </p>
 
 </div>
 
-
 <div class="cookie-buttons">
 
 <button onclick="acceptCookies()">
-Kabul Et
-</button>
 
+Kabul Et
+
+</button>
 
 <button onclick="closeCookies()">
+
 Sonra
+
 </button>
 
 </div>
 
-
 </div>
-
-
-
-
-
-<script>
-
-function acceptCookies(){
-
-localStorage.setItem(
-"novaCookies",
-"accepted"
-);
-
-
-document.getElementById("cookieBox")
-.style.display="none";
-
-}
-
-
-
-function closeCookies(){
-
-document.getElementById("cookieBox")
-.style.display="none";
-
-}
-
-
-
-if(localStorage.getItem("novaCookies")){
-
-document.getElementById("cookieBox")
-.style.display="none";
-
-}
-
-</script>
-
-
-
-
-
 
 <header>
-<div class="search-box">
-
-<input 
-id="mainSearch"
-type="text"
-placeholder="🔎 Takım, haber veya içerik ara..."
->
-
-<button onclick="goSearch()">
-Ara
-</button>
-
-</div>
 
 <div class="topbar">
-
 
 <div class="logo-area">
 
 <img src="34f61286-7cb0-4e7c-ab7b-5476b33e549d.png" alt="NovaSpor Logo">
 
+<div>
+
 <h1>NOVASPOR</h1>
 
+<span class="logo-sub">
+
+Canlı Skor • Haber • Fikstür
+
+</span>
+
 </div>
 
-
-<button id="menuBtn">☰</button>
-
-
 </div>
 
+<button id="menuBtn">
+
+☰
+
+</button>
+
+</div>
 
 <div id="overlay"></div>
-
 
 <nav id="menu">
 
@@ -174,151 +120,68 @@ Ara
 <a href="contact.html">📞 İletişim</a>
 
 <a href="privacy.html">🔒 Gizlilik</a>
+
 <a href="cookie.html">🍪 Çerez Politikası</a>
 
 </nav>
 
-
 </header>
-
-
-
-
-
-
 
 <main>
 
+<!-- ARAMA -->
 
-<section class="hero">
+<section class="search-section">
 
-<h2>Futbolun Yeni Adresi</h2>
+<div class="search-box">
 
-<p>
-Canlı skorlar • Fikstür • Puan Durumu • Haberler
-</p>
+<input
+id="mainSearch"
+type="text"
+placeholder="🔎 Takım, haber veya içerik ara...">
 
-</section>
+<button onclick="goSearch()">
 
+Ara
 
-
-
-
-
-
-<section class="card">
-
-<h3>🔴 Canlı Maçlar</h3>
-
-
-<div id="live">
-
-⚽ Canlı maçlar yükleniyor...
+</button>
 
 </div>
 
-
-<a href="live.html">
-
-Canlı Maçlar →
-
-</a>
-
-
 </section>
 
-
-
-
-
-
-
-
-<section class="card">
-
-<h3>⭐ Favori Takımım</h3>
-
-
-<div id="favorite">
-
-⭐ Henüz takım seçilmedi.
-
-</div>
-
-
-<a href="favorites.html">
-
-Takım Seç →
-
-</a>
-
-
-</section>
-
-
-
-
-
-
-
-
-<section class="card">
-
-<h3>🏆 Puan Durumu</h3>
-
-
-<div id="homeStandings">
-
-🏆 Puan durumu yükleniyor...
-
-</div>
-
-
-<a href="standings.html">
-
-Tüm Puan Durumu →
-
-</a>
-
-
-</section>
-
-
-
-
-
-
-
-
-<section class="card">
-
-<h3>📅 Yaklaşan Maçlar</h3>
-
-
-<div id="homeFixtures">
-
-📅 Fikstür yükleniyor...
-
-</div>
-
-
-<a href="fixtures.html">
-
-Tüm Fikstür →
-
-</a>
-
-
-</section>
-
-
-
-
-
-
-
+<!-- SON DAKİKA -->
 
 <section class="news-hero">
+
+<div class="news-badge">
+
+🔥 SON DAKİKA
+
+</div>
+
+<h2>
+
+Günün En Önemli Spor Haberleri
+
+</h2>
+
+<p>
+
+Transferler, Süper Lig gelişmeleri ve son dakika spor haberlerini tek tıkla takip edin.
+
+</p>
+
+<a href="news.html" class="news-btn">
+
+📰 Haberlere Git →
+
+</a>
+
+</section>
+
+<!-- KAYAN HABER -->
+
 <section class="breaking-news">
 
 <div class="breaking-title">
@@ -332,9 +195,13 @@ Tüm Fikstür →
 <div class="breaking-text">
 
 Galatasaray'dan Brahim Diaz bombası •
+
 Fenerbahçe Greenwood transferini bitirdi •
+
 Beşiktaş Trossard transferini açıkladı •
-Trabzonspor yeni orta sahasını duyurdu •
+
+Trabzonspor yeni transferini duyurdu •
+
 Victor Osimhen geleceği hakkında konuştu •
 
 </div>
@@ -342,19 +209,21 @@ Victor Osimhen geleceği hakkında konuştu •
 </div>
 
 </section>
-<div class="news-badge">
-🔥 SON DAKİKA
+<!-- CANLI MAÇLAR -->
+
+<section class="card">
+
+<h3>🔴 Canlı Maçlar</h3>
+
+<div id="live">
+
+⚽ Canlı maçlar yükleniyor...
+
 </div>
 
-<h2>Günün En Önemli Spor Haberleri</h2>
+<a href="live.html">
 
-<p>
-Transferler, Süper Lig gelişmeleri, Avrupa futbolu ve son dakika spor haberlerini tek tıkla takip et.
-</p>
-
-<a href="news.html" class="news-btn">
-
-📰 Haberlere Git →
+Canlı Maçlar →
 
 </a>
 
@@ -362,91 +231,157 @@ Transferler, Süper Lig gelişmeleri, Avrupa futbolu ve son dakika spor haberler
 
 
 
+<!-- PUAN DURUMU -->
+
+<section class="card">
+
+<h3>🏆 Puan Durumu</h3>
+
+<div id="homeStandings">
+
+🏆 Puan durumu yükleniyor...
+
+</div>
+
+<a href="standings.html">
+
+Tüm Puan Durumu →
+
+</a>
+
+</section>
+
+
+
+<!-- FAVORİ TAKIM -->
+
+<section class="card">
+
+<h3>⭐ Favori Takımım</h3>
+
+<div id="favorite">
+
+⭐ Henüz takım seçilmedi.
+
+</div>
+
+<a href="favorites.html">
+
+Takım Seç →
+
+</a>
+
+</section>
+
+
+
+<!-- YAKLAŞAN MAÇLAR -->
+
+<section class="card">
+
+<h3>📅 Yaklaşan Maçlar</h3>
+
+<div id="homeFixtures">
+
+</div>
+
+<a href="fixtures.html">
+
+Tüm Fikstür →
+
+</a>
+
+</section>
+<!-- FOOTER -->
 
 </main>
 
-
-
-
-
-
-
 <footer>
 
-<p>
-© 2026 NovaSpor
-</p>
+<p>© 2026 NovaSpor</p>
 
 </footer>
 
-
-
-
-
-
-
+<!-- ÇEREZ -->
 
 <script>
 
+function acceptCookies(){
 
-const menuBtn = document.getElementById("menuBtn");
+localStorage.setItem("novaCookies","accepted");
 
-const menu = document.getElementById("menu");
+document.getElementById("cookieBox").style.display="none";
 
-const overlay = document.getElementById("overlay");
+}
 
+function closeCookies(){
 
+document.getElementById("cookieBox").style.display="none";
 
-menuBtn.onclick = () => {
+}
+
+window.onload = function(){
+
+if(localStorage.getItem("novaCookies")){
+
+document.getElementById("cookieBox").style.display="none";
+
+}
+
+}
+
+</script>
+
+<!-- MENÜ -->
+
+<script>
+
+const menuBtn=document.getElementById("menuBtn");
+
+const menu=document.getElementById("menu");
+
+const overlay=document.getElementById("overlay");
+
+menuBtn.onclick=function(){
 
 menu.classList.add("active");
 
 overlay.classList.add("active");
 
-};
+}
 
-
-
-overlay.onclick = () => {
+overlay.onclick=function(){
 
 menu.classList.remove("active");
 
 overlay.classList.remove("active");
 
-};
-
+}
 
 </script>
 
-
-
-
-
-<script src="js/home.js"></script>
+<!-- ARAMA -->
 
 <script>
 
 function goSearch(){
 
-let value =
-document.getElementById("mainSearch").value;
+const value=document.getElementById("mainSearch").value.trim();
 
+if(value==="") return;
 
-if(value.trim() !== ""){
-
-localStorage.setItem(
-"searchText",
-value
-);
-
+localStorage.setItem("searchText",value);
 
 window.location.href="search.html";
 
 }
 
-}
-
 </script>
+
+<!-- ANA SAYFA -->
+
+<script src="js/home.js"></script>
+
 </body>
 
 </html>

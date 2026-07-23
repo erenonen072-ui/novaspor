@@ -1,194 +1,25 @@
-// =========================
-// NOVASPOR V3 HOME.JS
-// =========================
-
-
-
-// 🌙 KARANLIK MOD
-
-const darkBtn = document.getElementById("darkMode");
-
-
-if(darkBtn){
-
-    darkBtn.addEventListener("click",()=>{
-
-        document.body.classList.toggle("dark");
-
-
-        localStorage.setItem(
-            "darkMode",
-            document.body.classList.contains("dark")
-        );
-
-
-    });
-
-}
-
-
-
-
-// kayıtlı tema
-
-if(localStorage.getItem("darkMode") === "true"){
-
-    document.body.classList.add("dark");
-
-}
-
-
-
-
-
-// 🍪 ÇEREZ SİSTEMİ
-
-
-const cookieBox =
-document.getElementById("cookieBox");
-
-
-const cookieAccept =
-document.getElementById("cookieAccept");
-
-
-
-if(localStorage.getItem("cookiesAccepted")){
-
-
-    if(cookieBox){
-
-        cookieBox.style.display="none";
-
-    }
-
-
-}
-
-
-
-
-if(cookieAccept){
-
-
-cookieAccept.addEventListener("click",()=>{
-
-
-    localStorage.setItem(
-        "cookiesAccepted",
-        "true"
-    );
-
-
-    cookieBox.style.display="none";
-
-
-});
-
-
-}
-
-
-
-
-
-
-// 🔍 ARAMA
-
-
-const search =
-document.getElementById("search");
-
-
-
-if(search){
-
-
-search.addEventListener("input",()=>{
-
-
-let value =
-search.value.toLowerCase();
-
-
-
-document.querySelectorAll(
-".card,.news-card"
-)
-.forEach(card=>{
-
-
-if(
-card.innerText
-.toLowerCase()
-.includes(value)
-){
-
-
-card.style.display="";
-
-
-}
-
-else{
-
-
-card.style.display="none";
-
-
-}
-
-
-});
-
-
-
-});
-
-
-}
-
-
-
-
+// ======================
+// NOVASPOR HOME JS
+// ======================
 
 
 // ⭐ FAVORİ TAKIM
 
+const favButton = document.querySelector(".box button");
 
+const favName = document.getElementById("favoriteName");
 
-const favoriteButton =
-document.querySelector(
-".favorite-box button"
-);
-
-
-
-const favoriteName =
-document.getElementById(
-"favoriteName"
-);
+const favLogo = document.getElementById("favoriteLogo");
 
 
 
-const favoriteLogo =
-document.getElementById(
-"favoriteLogo"
-);
+if(favButton){
 
 
+favButton.addEventListener("click",()=>{
 
 
-if(favoriteButton){
-
-
-favoriteButton.addEventListener(
-"click",
-()=>{
-
-
-let team =
-prompt(
+let team = prompt(
 "Favori takımını yaz:"
 );
 
@@ -197,9 +28,7 @@ prompt(
 if(team){
 
 
-favoriteName.innerText =
-team;
-
+favName.innerText = team;
 
 
 localStorage.setItem(
@@ -208,9 +37,7 @@ team
 );
 
 
-
 }
-
 
 
 });
@@ -221,19 +48,13 @@ team
 
 
 
-let savedTeam =
-localStorage.getItem(
-"favoriteTeam"
-);
+let saved =
+localStorage.getItem("favoriteTeam");
 
 
+if(saved && favName){
 
-if(savedTeam && favoriteName){
-
-
-favoriteName.innerText =
-savedTeam;
-
+favName.innerText = saved;
 
 }
 
@@ -241,15 +62,10 @@ savedTeam;
 
 
 
-
-// 🔴 ÖRNEK CANLI MAÇ
-
+// 🔴 CANLI MAÇ ÖRNEK
 
 const live =
-document.getElementById(
-"liveMatches"
-);
-
+document.getElementById("liveMatches");
 
 
 if(live){
@@ -257,27 +73,45 @@ if(live){
 
 live.innerHTML = `
 
-<div class="match-card">
+<div>
 
-<div class="team">
-⚽ Galatasaray
-</div>
-
-
-<div class="score">
-2 - 1
-</div>
-
-
-<div class="team">
-Fenerbahçe ⚽
-</div>
-
+⚽ Galatasaray 2 - 1 Fenerbahçe
 
 </div>
 
 `;
 
+}
+
+
+
+
+
+// 📅 FİKSTÜR ÖRNEK
+
+const fixtures =
+document.getElementById("fixtures");
+
+
+if(fixtures){
+
+
+fixtures.innerHTML = `
+
+<div>
+
+📅 Galatasaray - Trabzonspor
+
+</div>
+
+
+<div>
+
+📅 Fenerbahçe - Beşiktaş
+
+</div>
+
+`;
 
 }
 
@@ -286,46 +120,39 @@ Fenerbahçe ⚽
 
 
 
+// 🌙 KARANLIK MOD EKLEME
 
-// 📅 YAKLAŞAN MAÇ
+
+const darkButton =
+document.createElement("button");
 
 
-const upcoming =
-document.getElementById(
-"upcomingMatches"
+darkButton.innerHTML="🌙";
+
+
+darkButton.style.position="fixed";
+
+darkButton.style.right="20px";
+
+darkButton.style.bottom="20px";
+
+darkButton.style.zIndex="999";
+
+
+
+document.body.appendChild(
+darkButton
 );
 
 
 
-if(upcoming){
+
+darkButton.onclick=()=>{
 
 
-upcoming.innerHTML = `
+document.body.classList.toggle(
+"dark"
+);
 
 
-<div class="match-card">
-
-
-<div>
-Galatasaray
-</div>
-
-
-<div>
-20:00
-</div>
-
-
-<div>
-Trabzonspor
-</div>
-
-
-
-</div>
-
-
-`;
-
-
-}
+};

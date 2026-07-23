@@ -1,6 +1,7 @@
 // =========================
-// NOVASPOR V2 HOME.JS
+// NOVASPOR V3 HOME.JS
 // =========================
+
 
 
 // 🌙 KARANLIK MOD
@@ -20,13 +21,15 @@ if(darkBtn){
             document.body.classList.contains("dark")
         );
 
+
     });
 
 }
 
 
 
-// kayıtlı karanlık mod
+
+// kayıtlı tema
 
 if(localStorage.getItem("darkMode") === "true"){
 
@@ -37,28 +40,42 @@ if(localStorage.getItem("darkMode") === "true"){
 
 
 
-// 🍪 ÇEREZ
 
-const cookieBox = document.getElementById("cookieBox");
-const cookieBtn = document.getElementById("cookieAccept");
+// 🍪 ÇEREZ SİSTEMİ
 
 
-if(localStorage.getItem("cookieOK")){
+const cookieBox =
+document.getElementById("cookieBox");
 
-    if(cookieBox)
+
+const cookieAccept =
+document.getElementById("cookieAccept");
+
+
+
+if(localStorage.getItem("cookiesAccepted")){
+
+
+    if(cookieBox){
+
         cookieBox.style.display="none";
+
+    }
+
 
 }
 
 
 
-if(cookieBtn){
 
-cookieBtn.addEventListener("click",()=>{
+if(cookieAccept){
+
+
+cookieAccept.addEventListener("click",()=>{
 
 
     localStorage.setItem(
-        "cookieOK",
+        "cookiesAccepted",
         "true"
     );
 
@@ -75,47 +92,55 @@ cookieBtn.addEventListener("click",()=>{
 
 
 
+
 // 🔍 ARAMA
 
-const searchInput = document.getElementById("search");
+
+const search =
+document.getElementById("search");
 
 
-if(searchInput){
 
-searchInput.addEventListener("keyup",(e)=>{
-
-
-    const value =
-    e.target.value.toLowerCase();
+if(search){
 
 
-    const cards =
-    document.querySelectorAll(
-        ".card,.news-card"
-    );
+search.addEventListener("input",()=>{
 
 
-    cards.forEach(card=>{
+let value =
+search.value.toLowerCase();
 
 
-        if(
-            card.innerText
-            .toLowerCase()
-            .includes(value)
-        ){
 
-            card.style.display="";
-
-        }
-
-        else{
-
-            card.style.display="none";
-
-        }
+document.querySelectorAll(
+".card,.news-card"
+)
+.forEach(card=>{
 
 
-    });
+if(
+card.innerText
+.toLowerCase()
+.includes(value)
+){
+
+
+card.style.display="";
+
+
+}
+
+else{
+
+
+card.style.display="none";
+
+
+}
+
+
+});
+
 
 
 });
@@ -127,25 +152,39 @@ searchInput.addEventListener("keyup",(e)=>{
 
 
 
+
 // ⭐ FAVORİ TAKIM
 
-const favoriteBtn =
-document.querySelector(".favorite-box button");
+
+
+const favoriteButton =
+document.querySelector(
+".favorite-box button"
+);
+
 
 
 const favoriteName =
-document.getElementById("favoriteName");
+document.getElementById(
+"favoriteName"
+);
+
 
 
 const favoriteLogo =
-document.getElementById("favoriteLogo");
+document.getElementById(
+"favoriteLogo"
+);
 
 
 
-if(favoriteBtn){
+
+if(favoriteButton){
 
 
-favoriteBtn.addEventListener("click",()=>{
+favoriteButton.addEventListener(
+"click",
+()=>{
 
 
 let team =
@@ -158,11 +197,8 @@ prompt(
 if(team){
 
 
-favoriteName.innerText = team;
-
-
-favoriteLogo.src =
-"https://media.api-sports.io/football/teams/645.png";
+favoriteName.innerText =
+team;
 
 
 
@@ -170,6 +206,7 @@ localStorage.setItem(
 "favoriteTeam",
 team
 );
+
 
 
 }
@@ -184,29 +221,35 @@ team
 
 
 
-// kayıtlı takım
+let savedTeam =
+localStorage.getItem(
+"favoriteTeam"
+);
 
-const savedTeam =
-localStorage.getItem("favoriteTeam");
 
 
 if(savedTeam && favoriteName){
 
+
 favoriteName.innerText =
 savedTeam;
+
 
 }
 
 
 
-// =========================
-// ÖRNEK VERİLER
-// =========================
 
+
+
+// 🔴 ÖRNEK CANLI MAÇ
 
 
 const live =
-document.getElementById("liveMatches");
+document.getElementById(
+"liveMatches"
+);
+
 
 
 if(live){
@@ -220,13 +263,16 @@ live.innerHTML = `
 ⚽ Galatasaray
 </div>
 
+
 <div class="score">
 2 - 1
 </div>
 
+
 <div class="team">
 Fenerbahçe ⚽
 </div>
+
 
 </div>
 
@@ -238,8 +284,17 @@ Fenerbahçe ⚽
 
 
 
+
+
+
+// 📅 YAKLAŞAN MAÇ
+
+
 const upcoming =
-document.getElementById("upcomingMatches");
+document.getElementById(
+"upcomingMatches"
+);
+
 
 
 if(upcoming){
@@ -247,22 +302,30 @@ if(upcoming){
 
 upcoming.innerHTML = `
 
+
 <div class="match-card">
+
 
 <div>
 Galatasaray
 </div>
 
+
 <div>
 20:00
 </div>
+
 
 <div>
 Trabzonspor
 </div>
 
+
+
 </div>
 
+
 `;
+
 
 }
